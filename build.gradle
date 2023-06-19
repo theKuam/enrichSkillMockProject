@@ -4,12 +4,15 @@ buildscript {
     ext {
         kotlin_version = "1.10.1"
         lifecycle_version = "2.6.1"
+        lifecycle_ext_version = "2.2.0"
         compose_version = "1.7.2"
         compose_compiler_version = "2022.10.00"
         nav_version = "2.6.0"
         hilt_version = "2.44"
         hilt_compose_version = "1.0.0"
         retrofit_version = "2.9.0"
+        glide_version = "4.15.1"
+
     }
 }
 

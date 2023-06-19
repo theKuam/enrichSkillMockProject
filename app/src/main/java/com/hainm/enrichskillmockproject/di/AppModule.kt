@@ -1,9 +1,12 @@
 package com.hainm.enrichskillmockproject.di
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.hainm.enrichskillmockproject.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -13,7 +16,6 @@ import javax.inject.Named
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
-
     @Provides
     @Named("BASE_URL")
     fun provideBaseUrl() = "https://gnews.io/api/v4/"
@@ -32,7 +34,6 @@ class AppModule {
         }
         .build()
 
-
     @Provides
     fun provideRetrofit(
         @Named("BASE_URL") baseUrl: String,
@@ -45,4 +46,8 @@ class AppModule {
             .client(client)
             .build()
     }
+
+    @Provides
+    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences =
+        context.getSharedPreferences("SharedPreference", Context.MODE_PRIVATE)
 }
