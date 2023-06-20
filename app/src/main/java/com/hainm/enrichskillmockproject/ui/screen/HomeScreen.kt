@@ -5,9 +5,5 @@ import com.hainm.enrichskillmockproject.core.BaseScreen
 
 @Composable
 fun HomeScreen(onNavigate: () -> Unit) {
-    BaseScreen(
-        screenTitle = "Home",
-        nextScreenTitle = "Article",
-        onNavigate = onNavigate,
-    )
+    BaseScreen(onNavigate = onNavigate) {}
 }

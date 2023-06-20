@@ -1,13 +1,30 @@
 package com.hainm.enrichskillmockproject.ui.screen
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import com.hainm.enrichskillmockproject.core.BaseScreen
+import com.hainm.enrichskillmockproject.ui.component.welcome.WelcomeCarousel
+import com.hainm.enrichskillmockproject.ui.component.welcome.WelcomeThumbnail
+import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
+@ExperimentalFoundationApi
 @Composable
 fun WelcomeScreen(onNavigate: () -> Unit) {
-    BaseScreen(
-        screenTitle = "Welcome",
-        nextScreenTitle = "Home",
-        onNavigate = onNavigate,
-    )
+    BaseScreen(onNavigate = onNavigate) {
+        val ratio = remember { mutableStateOf(0f) }
+        WelcomeThumbnail(ratio)
+        WelcomeCarousel(
+            modifier = Modifier
+                .padding(
+                    start = Spacing.extraLarge,
+                    end = Spacing.smallMedium,
+                ),
+            onPageChanged = { ratio.value = it },
+            onNavigate = onNavigate,
+        )
+    }
 }

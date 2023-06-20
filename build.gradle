@@ -11,8 +11,6 @@ buildscript {
         hilt_version = "2.44"
         hilt_compose_version = "1.0.0"
         retrofit_version = "2.9.0"
-        glide_version = "4.15.1"
-
     }
 }
 

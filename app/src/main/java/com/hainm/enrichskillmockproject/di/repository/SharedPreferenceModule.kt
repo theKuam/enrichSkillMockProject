@@ -13,6 +13,6 @@ abstract class SharedPreferenceModule {
 
     @Binds
     abstract fun provideSharedPreferenceRepository(
-        sharedPreferenceRepositoryImpl: SharedPreferenceRepositoryImpl
+        sharedPreferenceRepositoryImpl: SharedPreferenceRepositoryImpl,
     ): SharedPreferenceRepository
 }

@@ -9,6 +9,7 @@ sealed class Outcome<out T> {
         constructor(message: String) : this(Throwable(message))
     }
 }
+
 val Outcome<*>.succeeded
     get() = this is Outcome.Success && data != null
 

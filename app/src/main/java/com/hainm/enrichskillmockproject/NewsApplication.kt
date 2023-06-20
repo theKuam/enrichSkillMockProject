@@ -7,7 +7,7 @@ import timber.log.Timber.Forest.plant
 
 
 @HiltAndroidApp
-class NewsApplication: Application() {
+class NewsApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         plant(Timber.DebugTree())

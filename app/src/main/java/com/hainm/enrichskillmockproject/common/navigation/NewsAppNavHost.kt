@@ -1,5 +1,6 @@
 package com.hainm.enrichskillmockproject.common.navigation
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
@@ -15,6 +16,7 @@ import com.hainm.enrichskillmockproject.ui.screen.ArticleScreen
 import com.hainm.enrichskillmockproject.ui.screen.HomeScreen
 import com.hainm.enrichskillmockproject.ui.screen.WelcomeScreen
 
+@ExperimentalFoundationApi
 @Composable
 fun NewsAppNavHost(
     modifier: Modifier = Modifier,
