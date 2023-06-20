@@ -5,5 +5,5 @@ import com.hainm.enrichskillmockproject.core.BaseScreen
 
 @Composable
 fun ArticleScreen() {
-    BaseScreen(screenTitle = "Article")
+    BaseScreen {}
 }

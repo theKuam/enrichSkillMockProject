@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">EnrichSkillMockProject</string>
+    <string name="welcome_title_1">Embrace the ever-changing seasons of life</string>
+    <string name="welcome_title_2">As the sun rises each morning</string>
+    <string name="welcome_title_3">Just as flower blooms in its own time</string>
+    <string name="welcome_title_4">Witness the beauty that surrounds you</string>
+    <string name="welcome_title_default">Discover nature and explore beyond</string>
+    <string name="welcome_desc_1">the cycling nature of growth and change</string>
+    <string name="welcome_desc_2">illuminates the world</string>
+    <string name="welcome_desc_3">so too can you flourish and grow into your fullest potential</string>
+    <string name="welcome_desc_4">serves as a reminder of your own inner strength and resilience</string>
+    <string name="welcome_desc_default">find with us your dream house quickly and precisely</string>
 </resources>
