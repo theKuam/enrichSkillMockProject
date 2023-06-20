@@ -36,10 +36,18 @@ fun NewsAppNavHost(
         ),
     ) {
         composable(route = ScreenDestination.WELCOME_SCREEN.name) {
-            WelcomeScreen(navController)
+            WelcomeScreen {
+                navController.navigate(ScreenDestination.HOME_SCREEN.name) {
+                    popUpTo(ScreenDestination.WELCOME_SCREEN.name) {
+                        inclusive = true
+                    }
+                }
+            }
         }
         composable(route = ScreenDestination.HOME_SCREEN.name) {
-            HomeScreen(navController)
+            HomeScreen {
+                navController.navigate(ScreenDestination.ARTICLE_SCREEN.name)
+            }
         }
         composable(route = ScreenDestination.ARTICLE_SCREEN.name) {
             ArticleScreen()
@@ -49,9 +57,9 @@ fun NewsAppNavHost(
 
 fun firstLaunchScreen(
     sharedPreferenceViewModel: SharedPreferenceViewModel,
-    isFirstLaunch: State<Boolean>,
+    isFirstLaunch: State<Boolean?>,
 ): String {
-    return if (isFirstLaunch.value) {
+    return if (isFirstLaunch.value == true) {
         sharedPreferenceViewModel.setFirstLaunch()
         ScreenDestination.WELCOME_SCREEN.name
     } else {
