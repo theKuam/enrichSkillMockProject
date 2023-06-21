@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.Constant.CAROUSEL_PAGE_COUNT
+import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.GreyText
 import com.hainm.enrichskillmockproject.ui.theme.Spacing

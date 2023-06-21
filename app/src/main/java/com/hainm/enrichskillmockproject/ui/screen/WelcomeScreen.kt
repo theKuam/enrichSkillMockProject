@@ -14,7 +14,7 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 @ExperimentalFoundationApi
 @Composable
 fun WelcomeScreen(onNavigate: () -> Unit) {
-    BaseScreen(onNavigate = onNavigate) {
+    BaseScreen {
         val ratio = remember { mutableStateOf(0f) }
         WelcomeThumbnail(ratio)
         WelcomeCarousel(

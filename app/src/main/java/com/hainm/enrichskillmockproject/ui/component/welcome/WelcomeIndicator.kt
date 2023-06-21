@@ -19,7 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.Constant.CAROUSEL_PAGE_COUNT
+import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGray
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGreen
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
