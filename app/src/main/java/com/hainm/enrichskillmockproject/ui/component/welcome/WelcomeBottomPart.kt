@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.hainm.enrichskillmockproject.ui.component.common.AppIndicator
+import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
 @Composable
@@ -28,7 +30,13 @@ fun WelcomeBottomPart(
                 .align(Alignment.Bottom),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            WelcomeIndicator(pagerState)
+            AppIndicator(
+                pagerState,
+                60.dp,
+                Spacing.medium,
+                Spacing.small,
+                Arrangement.Start,
+            )
             WelcomeButton(
                 pagerState,
                 onNavigate,

@@ -10,4 +10,10 @@
     <string name="welcome_desc_3">so too can you flourish and grow into your fullest potential</string>
     <string name="welcome_desc_4">serves as a reminder of your own inner strength and resilience</string>
     <string name="welcome_desc_default">find with us your dream house quickly and precisely</string>
+    <string name="home_welcome_user_1">Hello Anderson</string>
+    <string name="home_welcome_user_2">Have a nice day</string>
+    <string name="article_category_1">Science</string>
+    <string name="article_category_2">Environment</string>
+    <string name="article_category_3">Animals</string>
+    <string name="article_category_4">Travel</string>
 </resources>

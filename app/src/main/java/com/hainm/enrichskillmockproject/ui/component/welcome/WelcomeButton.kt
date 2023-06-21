@@ -72,7 +72,6 @@ fun RowScope.WelcomeButton(
         ) {
             Text(
                 text = "Get Started",
-                color = Color.White,
                 style = AppTextStyle.WelcomeButton,
             )
             Spacer(modifier = Modifier.width(Spacing.extraLarge))

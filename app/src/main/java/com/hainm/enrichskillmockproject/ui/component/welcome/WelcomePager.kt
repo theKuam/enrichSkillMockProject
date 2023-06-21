@@ -18,9 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
-import com.hainm.enrichskillmockproject.ui.theme.GreyText
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
-import com.hainm.enrichskillmockproject.ui.theme.WhiteText
 
 @ExperimentalFoundationApi
 @Composable
@@ -51,13 +49,11 @@ fun WelcomePager(
             Text(
                 text = title,
                 style = AppTextStyle.WelcomeTitle,
-                color = WhiteText,
             )
             Spacer(modifier = Modifier.height(Spacing.smallMedium))
             Text(
                 text = description,
                 style = AppTextStyle.WelcomeDescription,
-                color = GreyText,
             )
         }
     }
