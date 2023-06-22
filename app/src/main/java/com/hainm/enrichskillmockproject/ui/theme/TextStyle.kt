@@ -87,4 +87,50 @@ object AppTextStyle {
         lineHeight = 15.sp,
         color = WhiteText,
     )
+
+    @Stable
+    val RecommendedArticle = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        color = WhiteText,
+    )
+
+    @Stable
+    val ShowAll = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 8.sp,
+        lineHeight = 11.sp,
+        color = IndicatorGreen,
+    )
+
+    @Stable
+    val NunitoCommonText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 9.sp,
+        lineHeight = 12.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val NunitoMediumText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 10.sp,
+        lineHeight = 16.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val NunitoSubtitleText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 6.sp,
+        lineHeight = 8.sp,
+        letterSpacing = 0.05.em,
+        color = Color.White,
+    )
 }

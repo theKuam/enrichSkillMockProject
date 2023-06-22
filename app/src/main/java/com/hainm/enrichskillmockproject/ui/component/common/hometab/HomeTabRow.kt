@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Surface
@@ -22,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.Placeable
@@ -32,7 +34,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
 import com.hainm.enrichskillmockproject.common.util.SubComposableId
-import com.hainm.enrichskillmockproject.ui.theme.AppBackground
+import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundUpper
 import com.hainm.enrichskillmockproject.ui.theme.HomeCategoryBackground
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGreen
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
@@ -42,7 +44,7 @@ fun HomeTabRow(
     width: Float,
     height: Float,
     containerColor: Color = HomeCategoryBackground,
-    indicatorColor: Color = AppBackground,
+    indicatorColor: Color = AppBackgroundUpper,
     containerShape: Shape = RoundedCornerShape(size = Spacing.small),
     indicatorShape: Shape = HomeTabIndicatorShape(Spacing.small),
     paddingValues: PaddingValues = PaddingValues(Spacing.extraSmall),
@@ -100,7 +102,8 @@ fun HomeTabRow(
                             modifier = Modifier
                                 .width(indicatorWidth.toDp() - Spacing.extraLarge * 2)
                                 .align(Alignment.BottomCenter)
-                                .offset(y = (-9).dp),
+                                .offset(y = (-7).dp)
+                                .clip(shape = CircleShape),
                             color = IndicatorGreen,
                             thickness = Spacing.stroke,
                         )

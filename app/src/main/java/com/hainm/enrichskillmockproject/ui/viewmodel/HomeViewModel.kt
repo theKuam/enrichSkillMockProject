@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
     val articlesStateFlow: StateFlow<Outcome<Articles>>
         get() = _articlesStateFlow.asStateFlow()
 
-    private val _isCarouselAutoPlayed = MutableStateFlow(true)
+    private val _isCarouselAutoPlayed = MutableStateFlow(false)
     val isCarouselAutoPlayed: StateFlow<Boolean>
         get() = _isCarouselAutoPlayed.asStateFlow()
 

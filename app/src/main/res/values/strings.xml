@@ -21,6 +21,9 @@
         <item>Environment</item>
         <item>Animals</item>
         <item>Travel</item>
-        <item>Politics</item>
     </string-array>
+    <string name="recommended_article">Recommended Article</string>
+    <string name="show_all">Show All</string>
+    <string name="read">READ</string>
+    <string name="no_article_available">No Article Available</string>
 </resources>

@@ -8,7 +8,6 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
-import timber.log.Timber
 
 class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
     override fun createOutline(
@@ -29,7 +28,6 @@ class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
             lineTo(0f, size.height)
         }
         return Path().apply {
-            Timber.d("HaiNM18 $size")
             reset()
             // top left arc
             arcTo(
