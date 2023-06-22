@@ -30,15 +30,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_INTERVAL
-import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.HomeCarouselGradientGray
+import com.hainm.enrichskillmockproject.ui.theme.HomeCarouselGradientLightGray
 import com.hainm.enrichskillmockproject.ui.theme.HomeCarouselTitleCursorYellow
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 import kotlinx.coroutines.delay
@@ -70,13 +70,16 @@ fun HomePager(
                 }
             }
         }
-        val index = pseudoIndex % CAROUSEL_PAGE_COUNT
-        val (title, image) = when (index) {
-            0 -> stringResource(id = R.string.article_category_1) to painterResource(id = R.drawable.article_category_1)
-            1 -> stringResource(id = R.string.article_category_2) to painterResource(id = R.drawable.article_category_2)
-            2 -> stringResource(id = R.string.article_category_3) to painterResource(id = R.drawable.article_category_3)
-            3 -> stringResource(id = R.string.article_category_4) to painterResource(id = R.drawable.article_category_4)
-            else -> stringResource(id = R.string.article_category_1) to painterResource(id = R.drawable.article_category_1)
+        val categoryList = stringArrayResource(id = R.array.article_categories)
+        val pageCount = categoryList.size
+        val index = pseudoIndex % pageCount
+        val title = categoryList[index]
+        val image = when (index) {
+            0 -> painterResource(id = R.drawable.article_category_1)
+            1 -> painterResource(id = R.drawable.article_category_2)
+            2 -> painterResource(id = R.drawable.article_category_3)
+            3 -> painterResource(id = R.drawable.article_category_4)
+            else -> painterResource(id = R.drawable.article_category_1)
         }
         Box {
             Image(
@@ -84,14 +87,18 @@ fun HomePager(
                     .fillMaxSize()
                     .drawWithCache {
                         val gradient = Brush.verticalGradient(
-                            colors = listOf(HomeCarouselGradientGray, Color.Transparent),
-                            startY = size.height,
-                            endY = 0f,
+                            colors = listOf(
+                                Color.Transparent,
+                                HomeCarouselGradientLightGray,
+                                HomeCarouselGradientGray
+                            ),
+                            startY = 0f,
+                            endY = size.height,
                             tileMode = TileMode.Clamp,
                         )
                         onDrawWithContent {
                             drawContent()
-                            drawRect(gradient, blendMode = BlendMode.Multiply)
+                            drawRect(gradient, blendMode = BlendMode.SrcOver)
                         }
                     },
                 painter = image,

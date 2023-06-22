@@ -4,7 +4,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
@@ -15,11 +15,11 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 @ExperimentalFoundationApi
 @Composable
 fun HomeCarousel(
+    pagerState: PagerState,
     isCarouselAutoPlayed: State<Boolean>,
     onPlayButtonClicked: () -> Unit,
     onPauseButtonClicked: () -> Unit,
 ) {
-    val pagerState = rememberPagerState()
     Box {
         HomePager(
             isCarouselAutoPlayed,

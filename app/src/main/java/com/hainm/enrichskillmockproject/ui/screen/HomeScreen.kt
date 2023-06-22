@@ -50,6 +50,7 @@ fun HomeScreen(onNavigate: () -> Unit) {
                     ),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                Spacer(modifier = Modifier.height(Spacing.extraSmall))
                 HomeUserView()
                 Spacer(modifier = Modifier.height(Spacing.extraSmall))
                 HomeMainView(

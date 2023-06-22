@@ -13,7 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
@@ -32,13 +32,9 @@ fun WelcomePager(
         pageCount = CAROUSEL_PAGE_COUNT,
     ) { index ->
         onPageChanged(pagerState.currentPage.toFloat() / CAROUSEL_PAGE_COUNT)
-        val (title, description) = when (index) {
-            0 -> stringResource(id = R.string.welcome_title_1) to stringResource(id = R.string.welcome_desc_1)
-            1 -> stringResource(id = R.string.welcome_title_2) to stringResource(id = R.string.welcome_desc_2)
-            2 -> stringResource(id = R.string.welcome_title_3) to stringResource(id = R.string.welcome_desc_3)
-            3 -> stringResource(id = R.string.welcome_title_4) to stringResource(id = R.string.welcome_desc_4)
-            else -> stringResource(id = R.string.welcome_title_default) to stringResource(id = R.string.welcome_desc_default)
-        }
+        val (title, description) = stringArrayResource(id = R.array.welcome_titles)[index] to stringArrayResource(
+            id = R.array.welcome_descriptions
+        )[index]
         Column(
             modifier = modifier
                 .fillMaxHeight()

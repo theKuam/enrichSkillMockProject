@@ -1,19 +1,26 @@
 <resources>
     <string name="app_name">EnrichSkillMockProject</string>
-    <string name="welcome_title_1">Embrace the ever-changing seasons of life</string>
-    <string name="welcome_title_2">As the sun rises each morning</string>
-    <string name="welcome_title_3">Just as flower blooms in its own time</string>
-    <string name="welcome_title_4">Witness the beauty that surrounds you</string>
     <string name="welcome_title_default">Discover nature and explore beyond</string>
-    <string name="welcome_desc_1">the cycling nature of growth and change</string>
-    <string name="welcome_desc_2">illuminates the world</string>
-    <string name="welcome_desc_3">so too can you flourish and grow into your fullest potential</string>
-    <string name="welcome_desc_4">serves as a reminder of your own inner strength and resilience</string>
+    <string-array name="welcome_titles">
+        <item>Embrace the ever-changing seasons of life</item>
+        <item>As the sun rises each morning</item>
+        <item>Just as flower blooms in its own time</item>
+        <item>Witness the beauty that surrounds you</item>
+    </string-array>
     <string name="welcome_desc_default">find with us your dream house quickly and precisely</string>
+    <string-array name="welcome_descriptions">
+        <item>the cycling nature of growth and change</item>
+        <item>illuminates the world</item>
+        <item>so too can you flourish and grow into your fullest potential</item>
+        <item>serves as a reminder of your own inner strength and resilience</item>
+    </string-array>
     <string name="home_welcome_user_1">Hello Anderson</string>
     <string name="home_welcome_user_2">Have a nice day</string>
-    <string name="article_category_1">Science</string>
-    <string name="article_category_2">Environment</string>
-    <string name="article_category_3">Animals</string>
-    <string name="article_category_4">Travel</string>
+    <string-array name="article_categories">
+        <item>Science</item>
+        <item>Environment</item>
+        <item>Animals</item>
+        <item>Travel</item>
+        <item>Politics</item>
+    </string-array>
 </resources>

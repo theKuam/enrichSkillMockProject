@@ -78,4 +78,13 @@ object AppTextStyle {
         lineHeight = 20.sp,
         color = WhiteText,
     )
+
+    @Stable
+    val HomeCategoryTitle = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        color = WhiteText,
+    )
 }

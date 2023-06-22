@@ -27,7 +27,7 @@ fun RowScope.UserAvatar() {
             .clip(shape = CircleShape)
             .border(
                 border = BorderStroke(
-                    width = Spacing.big_stroke,
+                    width = Spacing.stroke,
                     brush = SolidColor(Color.White),
                 ),
                 shape = CircleShape,
