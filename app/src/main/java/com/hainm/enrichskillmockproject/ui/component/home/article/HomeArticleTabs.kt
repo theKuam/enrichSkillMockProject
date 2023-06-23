@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.article
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
@@ -93,21 +93,21 @@ private fun OnTabChange(
     when (currentIndex) {
         0 -> {
             onCategoryChange(Category.SCIENCE)
-            onSubCategoryChange(SubCategory.DEFAULT)
+            onSubCategoryChange(SubCategory.SCIENCE)
         }
 
         1 -> {
-            onCategoryChange(Category.GENERAL)
+            onCategoryChange(Category.WORLD)
             onSubCategoryChange(SubCategory.ENVIRONMENT)
         }
 
         2 -> {
-            onCategoryChange(Category.GENERAL)
+            onCategoryChange(Category.WORLD)
             onSubCategoryChange(SubCategory.ANIMAL)
         }
 
         3 -> {
-            onCategoryChange(Category.GENERAL)
+            onCategoryChange(Category.WORLD)
             onSubCategoryChange(SubCategory.TRAVEL)
         }
 

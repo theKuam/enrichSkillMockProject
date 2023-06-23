@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.article
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,10 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeArticleList(articles: State<Outcome<Articles>>) {
+fun HomeArticleList(
+    articles: State<Outcome<Articles>>,
+    onNavigate: (Article) -> Unit,
+) {
     val firstHalfList = arrayListOf<Article>()
     val secondHalfList = arrayListOf<Article>()
     var articleListSize by remember { mutableStateOf(0) }
@@ -84,7 +87,10 @@ fun HomeArticleList(articles: State<Outcome<Articles>>) {
                 }
 
                 else -> items(if (onClickShowAllGrid) firstHalfList.size else 2) { index ->
-                    ArticleGridItem(firstHalfList[index])
+                    ArticleGridItem(
+                        firstHalfList[index],
+                        onNavigate,
+                    )
                 }
             }
             item(span = { GridItemSpan(2) }) {
@@ -103,7 +109,10 @@ fun HomeArticleList(articles: State<Outcome<Articles>>) {
                     val size = if (onClickShowAllColumn) secondHalfList.size else 1
                     secondHalfList.subList(0, size).forEachIndexed { index, _ ->
                         item(span = { GridItemSpan(2) }) {
-                            ArticleColumnItem(secondHalfList[index])
+                            ArticleColumnItem(
+                                secondHalfList[index],
+                                onNavigate,
+                            )
                         }
                     }
                 }

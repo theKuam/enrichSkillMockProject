@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.carousel
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

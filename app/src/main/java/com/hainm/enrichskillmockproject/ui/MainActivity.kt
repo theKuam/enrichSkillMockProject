@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material3.MaterialTheme
 import androidx.core.view.WindowCompat
 import com.hainm.enrichskillmockproject.common.navigation.NewsAppNavHost
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,7 +16,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            NewsAppNavHost()
+            MaterialTheme {
+                NewsAppNavHost()
+            }
         }
     }
 }

@@ -26,4 +26,17 @@
     <string name="show_all">Show All</string>
     <string name="read">READ</string>
     <string name="no_article_available">No Article Available</string>
+    <string-array name="home_navigation">
+        <item>Home</item>
+        <item>Navigation</item>
+        <item>Notification</item>
+        <item>User</item>
+    </string-array>
+    <string name="by">By</string>
+    <string name="published">Published</string>
+    <string-array name="article_content">
+        <item>Overview</item>
+        <item>Album</item>
+        <item>Discussion</item>
+    </string-array>
 </resources>

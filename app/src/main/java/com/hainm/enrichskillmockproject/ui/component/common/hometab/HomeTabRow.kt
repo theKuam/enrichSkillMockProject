@@ -32,8 +32,8 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
 import com.hainm.enrichskillmockproject.common.util.SubComposableId
+import com.hainm.enrichskillmockproject.common.util.TAB_INDICATOR_ANIMATING_DURATION
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundUpper
 import com.hainm.enrichskillmockproject.ui.theme.HomeCategoryBackground
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGreen
@@ -49,7 +49,7 @@ fun HomeTabRow(
     indicatorShape: Shape = HomeTabIndicatorShape(Spacing.small),
     paddingValues: PaddingValues = PaddingValues(Spacing.extraSmall),
     animationSpec: AnimationSpec<Dp> = tween(
-        durationMillis = CAROUSEL_AUTOPLAY_ANIMATING_DURATION,
+        durationMillis = TAB_INDICATOR_ANIMATING_DURATION,
         easing = FastOutSlowInEasing
     ),
     selectedTabPosition: Int = 0,

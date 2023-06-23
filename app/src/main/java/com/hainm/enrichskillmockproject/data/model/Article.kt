@@ -1,8 +1,11 @@
 package com.hainm.enrichskillmockproject.data.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class Article(
     @Json(name = "title") val title: String?,
@@ -12,4 +15,4 @@ data class Article(
     @Json(name = "image") val image: String?,
     @Json(name = "publishedAt") val publishAt: String?,
     @Json(name = "source") val source: Source?,
-)
+) : Parcelable

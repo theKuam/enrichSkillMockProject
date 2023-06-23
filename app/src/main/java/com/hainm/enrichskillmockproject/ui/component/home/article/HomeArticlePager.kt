@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.article
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Spacer
@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.ui.Modifier
 import com.hainm.enrichskillmockproject.common.Outcome
+import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.data.model.Articles
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
@@ -19,6 +20,7 @@ fun HomeArticlePager(
     articles: State<Outcome<Articles>>,
     onCategoryChange: (String) -> Unit,
     onSubCategoryChange: (String) -> Unit,
+    onNavigate: (Article) -> Unit,
 ) {
 
     HomeArticleTabs(
@@ -28,5 +30,8 @@ fun HomeArticlePager(
         onSubCategoryChange,
     )
     Spacer(modifier = Modifier.height(Spacing.medium))
-    HomeArticleList(articles)
+    HomeArticleList(
+        articles,
+        onNavigate,
+    )
 }

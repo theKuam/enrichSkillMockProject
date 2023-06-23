@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -26,9 +27,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.hainm.enrichskillmockproject.common.util.Category
 import com.hainm.enrichskillmockproject.common.util.SubCategory
 import com.hainm.enrichskillmockproject.core.BaseScreen
-import com.hainm.enrichskillmockproject.ui.component.home.HomeMainView
+import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.home.HomeNavigateBottomView
 import com.hainm.enrichskillmockproject.ui.component.home.HomeUserView
+import com.hainm.enrichskillmockproject.ui.component.home.HomeViewPager
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundLower
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundMiddle
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundUpper
@@ -37,12 +39,15 @@ import com.hainm.enrichskillmockproject.ui.viewmodel.HomeViewModel
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(onNavigate: () -> Unit) {
+fun HomeScreen(onNavigate: (Article) -> Unit) {
     val homeViewModel: HomeViewModel = hiltViewModel()
     val articles = homeViewModel.articlesStateFlow.collectAsState()
     val isCarouselAutoPlayed = homeViewModel.isCarouselAutoPlayed.collectAsState()
     var category by remember { mutableStateOf(Category.GENERAL) }
     var subCategory by remember { mutableStateOf(SubCategory.ANIMAL) }
+    var tabIndex by remember { mutableStateOf(0) }
+    var isTabSelected by remember { mutableStateOf(false) }
+    val pagerState = rememberPagerState()
     LaunchedEffect(key1 = category, key2 = subCategory) {
         homeViewModel.getRecommendedArticles(category, subCategory)
     }
@@ -75,17 +80,24 @@ fun HomeScreen(onNavigate: () -> Unit) {
                     Spacer(modifier = Modifier.height(Spacing.extraSmall))
                     HomeUserView()
                     Spacer(modifier = Modifier.height(Spacing.extraSmall))
-                    HomeMainView(
+                    HomeViewPager(
+                        pagerState,
                         isCarouselAutoPlayed,
                         { homeViewModel.startAutoPlayed() },
                         { homeViewModel.stopAutoPlayed() },
                         articles,
                         { category = it },
                         { subCategory = it },
+                        tabIndex,
+                        isTabSelected,
+                        onNavigate,
                     )
                 }
                 Box(modifier = Modifier.align(Alignment.BottomCenter)) {
-                    HomeNavigateBottomView()
+                    HomeNavigateBottomView(pagerState.currentPage) {
+                        tabIndex = it
+                        isTabSelected = !isTabSelected
+                    }
                 }
             }
         }

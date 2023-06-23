@@ -1,6 +1,7 @@
 package com.hainm.enrichskillmockproject.common.util
 
 const val CAROUSEL_PAGE_COUNT = 4
+const val CONTENT_PAGE_COUNT = 3
 const val EMPTY_STRING = ""
 
 const val CAROUSEL_AUTOPLAY_INTERVAL = 10_000L
@@ -11,13 +12,15 @@ const val TAB_INDICATOR_ANIMATING_DURATION = 250
 object Category {
     const val DEFAULT = EMPTY_STRING
     const val GENERAL = "general"
+    const val WORLD = "world"
     const val SCIENCE = "science"
 }
 
 object SubCategory {
     const val DEFAULT = EMPTY_STRING
+    const val SCIENCE = "science"
     const val ENVIRONMENT = "environment"
-    const val ANIMAL = "animal"
+    const val ANIMAL = "animals"
     const val TRAVEL = "travel"
 }
 
@@ -25,4 +28,9 @@ enum class SubComposableId {
     PRECALCULATE_ITEM,
     ITEM,
     INDICATOR,
+}
+
+object DateTimeFormat {
+    const val RESPONSE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    const val UI_FORMAT = "MMM dd, yyyy"
 }
