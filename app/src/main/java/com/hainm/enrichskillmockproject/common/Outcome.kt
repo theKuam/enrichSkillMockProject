@@ -8,6 +8,10 @@ sealed class Outcome<out T> {
     data class Error(val throwable: Throwable) : Outcome<Nothing>() {
         constructor(message: String) : this(Throwable(message))
     }
+
+    object Loading : Outcome<Nothing>()
+
+    object NotLoading : Outcome<Nothing>()
 }
 
 val Outcome<*>.succeeded
@@ -15,3 +19,6 @@ val Outcome<*>.succeeded
 
 val Outcome<*>.failed
     get() = this is Outcome.Error
+
+val Outcome<*>.loading
+    get() = this is Outcome.Loading

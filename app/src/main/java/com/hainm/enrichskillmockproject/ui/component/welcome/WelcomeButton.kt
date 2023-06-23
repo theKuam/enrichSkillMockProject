@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.Constant.CAROUSEL_PAGE_COUNT
+import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.ButtonGray
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGreen
@@ -72,7 +72,6 @@ fun RowScope.WelcomeButton(
         ) {
             Text(
                 text = "Get Started",
-                color = Color.White,
                 style = AppTextStyle.WelcomeButton,
             )
             Spacer(modifier = Modifier.width(Spacing.extraLarge))

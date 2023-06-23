@@ -6,6 +6,8 @@ object Spacing {
 
     val default = 0.dp
 
+    val stroke = 2.dp
+
     val extraSmall = 4.dp
 
     val small = 8.dp

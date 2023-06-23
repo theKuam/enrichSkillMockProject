@@ -1,6 +1,7 @@
 package com.hainm.enrichskillmockproject.ui.theme
 
 import androidx.compose.runtime.Stable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -29,6 +30,7 @@ object AppTextStyle {
         fontWeight = FontWeight.SemiBold,
         fontSize = 29.sp,
         lineHeight = 45.sp,
+        color = WhiteText,
     )
 
     @Stable
@@ -38,6 +40,7 @@ object AppTextStyle {
         fontSize = 14.sp,
         lineHeight = 17.sp,
         letterSpacing = 0.05.em,
+        color = WhiteGreyText,
     )
 
     @Stable
@@ -46,5 +49,88 @@ object AppTextStyle {
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
         lineHeight = 23.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val HomeWelcomeUserBold = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 17.sp,
+        lineHeight = 24.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val HomeWelcomeUserNormal = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        color = LightGreyText,
+    )
+
+    @Stable
+    val HomeCarouselTitle = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        color = WhiteText,
+    )
+
+    @Stable
+    val HomeCategoryTitle = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 15.sp,
+        color = WhiteText,
+    )
+
+    @Stable
+    val RecommendedArticle = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        color = WhiteText,
+    )
+
+    @Stable
+    val ShowAll = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 8.sp,
+        lineHeight = 11.sp,
+        color = IndicatorGreen,
+    )
+
+    @Stable
+    val NunitoCommonText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 9.sp,
+        lineHeight = 12.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val NunitoMediumText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 10.sp,
+        lineHeight = 16.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val NunitoSubtitleText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 6.sp,
+        lineHeight = 8.sp,
+        letterSpacing = 0.05.em,
+        color = Color.White,
     )
 }

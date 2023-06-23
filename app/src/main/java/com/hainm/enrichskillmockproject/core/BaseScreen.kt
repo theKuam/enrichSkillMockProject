@@ -11,7 +11,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun BaseScreen(
-    onNavigate: (() -> Unit)? = null,
     content: @Composable () -> Unit,
 ) {
     HideSystemUI()
@@ -28,8 +27,9 @@ private fun HideSystemUI() {
     DisposableEffect(systemUiController, useDarkIcons) {
         systemUiController.setSystemBarsColor(
             color = Color.Transparent,
-            darkIcons = useDarkIcons
+            darkIcons = useDarkIcons,
         )
+        systemUiController.isNavigationBarVisible = false
 
         onDispose {}
     }

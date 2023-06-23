@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.welcome
+package com.hainm.enrichskillmockproject.ui.component.common
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -17,25 +17,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.Dp
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.Constant.CAROUSEL_PAGE_COUNT
+import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGray
 import com.hainm.enrichskillmockproject.ui.theme.IndicatorGreen
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
 @Composable
-fun RowScope.WelcomeIndicator(pagerState: PagerState) {
+fun RowScope.AppIndicator(
+    pagerState: PagerState,
+    height: Dp,
+    currentSize: Dp,
+    normalSize: Dp,
+    horizontalArrangement: Arrangement.Horizontal,
+) {
     Row(
         modifier = Modifier
-            .height(60.dp)
+            .height(height)
             .align(Alignment.CenterVertically),
-        horizontalArrangement = Arrangement.Start,
+        horizontalArrangement = horizontalArrangement,
         verticalAlignment = Alignment.CenterVertically,
     ) {
         repeat(CAROUSEL_PAGE_COUNT) { iteration ->
-            val (size, color) = if (pagerState.currentPage == iteration) Spacing.medium to IndicatorGreen else Spacing.small to IndicatorGray
+            val currentIndex = pagerState.currentPage % CAROUSEL_PAGE_COUNT
+            val (size, color) = if (currentIndex == iteration) currentSize to IndicatorGreen else normalSize to IndicatorGray
             Box(
                 modifier = Modifier
                     .padding(Spacing.extraSmall)
@@ -43,7 +50,7 @@ fun RowScope.WelcomeIndicator(pagerState: PagerState) {
                     .background(color)
                     .size(size)
             ) {
-                if (pagerState.currentPage == iteration) {
+                if (currentIndex == iteration) {
                     Image(
                         painter = painterResource(id = R.drawable.indicator_right_24),
                         contentDescription = "indicator",
