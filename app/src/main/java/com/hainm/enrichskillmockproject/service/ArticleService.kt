@@ -12,5 +12,6 @@ interface ArticleService {
         @Query("category") category: String = Category.GENERAL,
         @Query("q") subCategory: String = SubCategory.ANIMAL,
         @Query("max") max: Int = 10,
+        @Query("expand") expand: Boolean = true,
     ): Articles
 }

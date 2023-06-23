@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.common.Outcome
+import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.data.model.Articles
 import com.hainm.enrichskillmockproject.ui.component.home.article.HomeArticlePager
 import com.hainm.enrichskillmockproject.ui.component.home.carousel.HomeCarousel
@@ -30,6 +31,7 @@ fun HomeMainView(
     articles: State<Outcome<Articles>>,
     onCategoryChange: (String) -> Unit,
     onSubCategoryChange: (String) -> Unit,
+    onNavigate: (Article) -> Unit,
 ) {
     val pagerState = rememberPagerState()
     Column(modifier = Modifier.fillMaxSize()) {
@@ -54,6 +56,7 @@ fun HomeMainView(
             articles,
             onCategoryChange,
             onSubCategoryChange,
+            onNavigate,
         )
     }
 }

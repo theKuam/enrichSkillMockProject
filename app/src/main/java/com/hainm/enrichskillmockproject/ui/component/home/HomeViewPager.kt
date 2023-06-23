@@ -11,6 +11,7 @@ import androidx.compose.runtime.State
 import com.hainm.enrichskillmockproject.common.Outcome
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
+import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.data.model.Articles
 
 @ExperimentalFoundationApi
@@ -25,6 +26,7 @@ fun HomeViewPager(
     onSubCategoryChange: (String) -> Unit,
     tabIndex: Int,
     isTabSelected: Boolean,
+    onNavigate: (Article) -> Unit,
 ) {
     HorizontalPager(
         state = pagerState,
@@ -49,6 +51,7 @@ fun HomeViewPager(
                 articles,
                 onCategoryChange,
                 onSubCategoryChange,
+                onNavigate,
             )
         } else {
             HomeBlankView(pagerState.currentPage)

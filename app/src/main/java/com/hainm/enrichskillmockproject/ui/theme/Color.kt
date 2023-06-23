@@ -11,7 +11,7 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val WhiteText = Color(0xFBFFFFFF)
-val WhiteGreyText = Color(0xC4FFFFFF)
+val WhiteGreyText = Color(0xFFC4C4C4)
 val LightGreyText = Color(0xFF858585)
 
 val IndicatorGray = Color(0xFF4F4F4F)
@@ -28,3 +28,9 @@ val HomeCarouselTitleCursorYellow = Color(0xFFF4C41A)
 val HomeCategoryBackground = Color(0xFF30312D)
 val ArticleItemBackground = Color(0xFF363636)
 val NavigationIcon = Color(0xFF787878)
+val Fuchsia = Color(0xFFEF5DA8)
+
+val ArticleSourceName = Color(0xFFFEC158)
+
+val DisableText = Color(0xFFB3B3B3)
+val ContentTextColor = Color(0xFFD9DAD3)

@@ -6,7 +6,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.hainm.enrichskillmockproject.R
 
@@ -28,8 +27,7 @@ object AppTextStyle {
     val WelcomeTitle = TextStyle(
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 29.sp,
-        lineHeight = 45.sp,
+        fontSize = 30.sp,
         color = WhiteText,
     )
 
@@ -38,8 +36,7 @@ object AppTextStyle {
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.Light,
         fontSize = 14.sp,
-        lineHeight = 17.sp,
-        letterSpacing = 0.05.em,
+        letterSpacing = 0.7.sp,
         color = WhiteGreyText,
     )
 
@@ -48,7 +45,6 @@ object AppTextStyle {
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
-        lineHeight = 23.sp,
         color = Color.White,
     )
 
@@ -56,8 +52,7 @@ object AppTextStyle {
     val HomeWelcomeUserBold = TextStyle(
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 17.sp,
-        lineHeight = 24.sp,
+        fontSize = 18.sp,
         color = Color.White,
     )
 
@@ -66,7 +61,6 @@ object AppTextStyle {
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
-        lineHeight = 16.sp,
         color = LightGreyText,
     )
 
@@ -75,7 +69,6 @@ object AppTextStyle {
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
-        lineHeight = 20.sp,
         color = WhiteText,
     )
 
@@ -84,7 +77,6 @@ object AppTextStyle {
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 10.sp,
-        lineHeight = 15.sp,
         color = WhiteText,
     )
 
@@ -93,7 +85,6 @@ object AppTextStyle {
         fontFamily = poppinsFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 12.sp,
-        lineHeight = 16.sp,
         color = WhiteText,
     )
 
@@ -102,7 +93,6 @@ object AppTextStyle {
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 8.sp,
-        lineHeight = 11.sp,
         color = IndicatorGreen,
     )
 
@@ -111,7 +101,6 @@ object AppTextStyle {
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 9.sp,
-        lineHeight = 12.sp,
         color = Color.White,
     )
 
@@ -120,7 +109,6 @@ object AppTextStyle {
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 10.sp,
-        lineHeight = 16.sp,
         color = Color.White,
     )
 
@@ -129,8 +117,31 @@ object AppTextStyle {
         fontFamily = nunitoSansFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 6.sp,
-        lineHeight = 8.sp,
-        letterSpacing = 0.05.em,
+        letterSpacing = 0.3.sp,
         color = Color.White,
+    )
+
+    @Stable
+    val ArticleTitle = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 24.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val NunitoLightMediumText = TextStyle(
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        color = Color.White,
+    )
+
+    @Stable
+    val ContentText = TextStyle(
+        fontFamily = poppinsFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        color = ContentTextColor,
     )
 }

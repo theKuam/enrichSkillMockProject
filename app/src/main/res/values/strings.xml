@@ -32,4 +32,11 @@
         <item>Notification</item>
         <item>User</item>
     </string-array>
+    <string name="by">By</string>
+    <string name="published">Published</string>
+    <string-array name="article_content">
+        <item>Overview</item>
+        <item>Album</item>
+        <item>Discussion</item>
+    </string-array>
 </resources>

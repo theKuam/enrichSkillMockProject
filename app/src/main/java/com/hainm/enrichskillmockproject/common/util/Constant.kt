@@ -1,6 +1,7 @@
 package com.hainm.enrichskillmockproject.common.util
 
 const val CAROUSEL_PAGE_COUNT = 4
+const val CONTENT_PAGE_COUNT = 3
 const val EMPTY_STRING = ""
 
 const val CAROUSEL_AUTOPLAY_INTERVAL = 10_000L
@@ -27,4 +28,9 @@ enum class SubComposableId {
     PRECALCULATE_ITEM,
     ITEM,
     INDICATOR,
+}
+
+object DateTimeFormat {
+    const val RESPONSE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    const val UI_FORMAT = "MMM dd, yyyy"
 }

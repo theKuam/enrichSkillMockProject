@@ -27,6 +27,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.hainm.enrichskillmockproject.common.util.Category
 import com.hainm.enrichskillmockproject.common.util.SubCategory
 import com.hainm.enrichskillmockproject.core.BaseScreen
+import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.home.HomeNavigateBottomView
 import com.hainm.enrichskillmockproject.ui.component.home.HomeUserView
 import com.hainm.enrichskillmockproject.ui.component.home.HomeViewPager
@@ -38,7 +39,7 @@ import com.hainm.enrichskillmockproject.ui.viewmodel.HomeViewModel
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(onNavigate: () -> Unit) {
+fun HomeScreen(onNavigate: (Article) -> Unit) {
     val homeViewModel: HomeViewModel = hiltViewModel()
     val articles = homeViewModel.articlesStateFlow.collectAsState()
     val isCarouselAutoPlayed = homeViewModel.isCarouselAutoPlayed.collectAsState()
@@ -48,7 +49,7 @@ fun HomeScreen(onNavigate: () -> Unit) {
     var isTabSelected by remember { mutableStateOf(false) }
     val pagerState = rememberPagerState()
     LaunchedEffect(key1 = category, key2 = subCategory) {
-//        homeViewModel.getRecommendedArticles(category, subCategory)
+        homeViewModel.getRecommendedArticles(category, subCategory)
     }
     BaseScreen {
         val density = LocalDensity.current
@@ -89,6 +90,7 @@ fun HomeScreen(onNavigate: () -> Unit) {
                         { subCategory = it },
                         tabIndex,
                         isTabSelected,
+                        onNavigate,
                     )
                 }
                 Box(modifier = Modifier.align(Alignment.BottomCenter)) {

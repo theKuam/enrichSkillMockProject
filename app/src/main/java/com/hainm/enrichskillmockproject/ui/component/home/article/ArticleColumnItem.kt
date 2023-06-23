@@ -2,6 +2,7 @@ package com.hainm.enrichskillmockproject.ui.component.home.article
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,7 +33,10 @@ import com.hainm.enrichskillmockproject.ui.theme.ArticleItemBackground
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
-fun ArticleColumnItem(article: Article) {
+fun ArticleColumnItem(
+    article: Article,
+    onNavigate: (Article) -> Unit,
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -66,6 +70,7 @@ fun ArticleColumnItem(article: Article) {
                 overflow = TextOverflow.Ellipsis,
             )
             Row(
+                modifier = Modifier.clickable { onNavigate(article) },
                 horizontalArrangement = Arrangement.spacedBy(2.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
