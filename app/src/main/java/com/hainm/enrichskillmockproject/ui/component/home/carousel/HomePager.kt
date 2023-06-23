@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.carousel
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween

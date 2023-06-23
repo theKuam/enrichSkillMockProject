@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component.home
+package com.hainm.enrichskillmockproject.ui.component.home.article
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Spacer

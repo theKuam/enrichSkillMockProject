@@ -11,13 +11,15 @@ const val TAB_INDICATOR_ANIMATING_DURATION = 250
 object Category {
     const val DEFAULT = EMPTY_STRING
     const val GENERAL = "general"
+    const val WORLD = "world"
     const val SCIENCE = "science"
 }
 
 object SubCategory {
     const val DEFAULT = EMPTY_STRING
+    const val SCIENCE = "science"
     const val ENVIRONMENT = "environment"
-    const val ANIMAL = "animal"
+    const val ANIMAL = "animals"
     const val TRAVEL = "travel"
 }
 
