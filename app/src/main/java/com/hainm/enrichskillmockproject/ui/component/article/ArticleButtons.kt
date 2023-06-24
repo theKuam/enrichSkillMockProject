@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.ui.component
+package com.hainm.enrichskillmockproject.ui.component.article
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxScope

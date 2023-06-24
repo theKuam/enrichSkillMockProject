@@ -18,6 +18,7 @@ import com.hainm.enrichskillmockproject.common.viewmodel.SharedPreferenceViewMod
 import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.screen.ArticleScreen
 import com.hainm.enrichskillmockproject.ui.screen.HomeScreen
+import com.hainm.enrichskillmockproject.ui.screen.LoadingScreen
 import com.hainm.enrichskillmockproject.ui.screen.WelcomeScreen
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -49,6 +50,9 @@ fun NewsAppNavHost(
             isFirstLaunch,
         ),
     ) {
+        composable(route = ScreenDestination.LOADING_SCREEN.name) {
+            LoadingScreen()
+        }
         composable(route = ScreenDestination.WELCOME_SCREEN.name) {
             WelcomeScreen {
                 navController.navigate(ScreenDestination.HOME_SCREEN.name) {
@@ -99,11 +103,17 @@ fun firstLaunchScreen(
     sharedPreferenceViewModel: SharedPreferenceViewModel,
     isFirstLaunch: State<Boolean?>,
 ): String {
-    return if (isFirstLaunch.value == true) {
-        sharedPreferenceViewModel.setFirstLaunch()
-        ScreenDestination.WELCOME_SCREEN.name
-    } else {
-        ScreenDestination.HOME_SCREEN.name
+    return when (isFirstLaunch.value) {
+        true -> {
+            sharedPreferenceViewModel.setFirstLaunch()
+            ScreenDestination.WELCOME_SCREEN.name
+        }
+        false -> {
+            ScreenDestination.HOME_SCREEN.name
+        }
+        else -> {
+            ScreenDestination.LOADING_SCREEN.name
+        }
     }
 }
 
