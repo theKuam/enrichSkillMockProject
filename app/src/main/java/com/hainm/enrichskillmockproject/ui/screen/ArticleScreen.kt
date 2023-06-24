@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.hainm.enrichskillmockproject.core.BaseScreen
 import com.hainm.enrichskillmockproject.data.model.Article
-import com.hainm.enrichskillmockproject.ui.component.ArticleButtons
+import com.hainm.enrichskillmockproject.ui.component.article.ArticleButtons
 import com.hainm.enrichskillmockproject.ui.component.article.ArticleBackground
 import com.hainm.enrichskillmockproject.ui.component.article.ArticleContent
 
