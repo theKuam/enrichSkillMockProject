@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -24,6 +25,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.common.util.Category
 import com.hainm.enrichskillmockproject.common.util.SubCategory
 import com.hainm.enrichskillmockproject.core.BaseScreen
@@ -45,9 +47,14 @@ fun HomeScreen(onNavigate: (Article) -> Unit) {
     val isCarouselAutoPlayed = homeViewModel.isCarouselAutoPlayed.collectAsState()
     var category by remember { mutableStateOf(Category.GENERAL) }
     var subCategory by remember { mutableStateOf(SubCategory.ANIMAL) }
-    var tabIndex by remember { mutableStateOf(0) }
+    var tabIndex by remember { mutableIntStateOf(0) }
     var isTabSelected by remember { mutableStateOf(false) }
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState(
+        initialPage = 0,
+        initialPageOffsetFraction = 0f
+    ) {
+        CAROUSEL_PAGE_COUNT
+    }
     LaunchedEffect(key1 = category, key2 = subCategory) {
         homeViewModel.getRecommendedArticles(category, subCategory)
     }

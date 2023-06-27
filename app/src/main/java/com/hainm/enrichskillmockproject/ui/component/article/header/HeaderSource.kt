@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.common.util.nullOrEmpty
@@ -15,11 +16,15 @@ import com.hainm.enrichskillmockproject.ui.theme.ArticleSourceName
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
-fun HeaderSource(article: Article) {
+fun HeaderSource(
+    article: Article,
+    textColor: Color,
+) {
     Row {
         Text(
             text = stringResource(id = R.string.by),
             style = AppTextStyle.NunitoLightMediumText,
+            color = textColor,
         )
         Spacer(modifier = Modifier.width(Spacing.extraSmall))
         Text(

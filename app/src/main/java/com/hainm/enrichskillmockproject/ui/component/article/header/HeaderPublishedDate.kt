@@ -2,6 +2,7 @@ package com.hainm.enrichskillmockproject.ui.component.article.header
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.common.util.DateTimeFormat
@@ -16,7 +17,10 @@ import java.util.Date
 import java.util.Locale
 
 @Composable
-fun HeaderPublishedDate(article: Article) {
+fun HeaderPublishedDate(
+    article: Article,
+    textColor: Color,
+) {
     val date = try {
         val input = SimpleDateFormat(DateTimeFormat.RESPONSE_FORMAT, Locale.getDefault())
             .parse(article.publishAt.nullOrEmpty()) ?: Date()
@@ -30,5 +34,6 @@ fun HeaderPublishedDate(article: Article) {
     Text(
         text = stringResource(id = R.string.published) + " $date",
         style = AppTextStyle.NunitoLightMediumText,
+        color = textColor,
     )
 }

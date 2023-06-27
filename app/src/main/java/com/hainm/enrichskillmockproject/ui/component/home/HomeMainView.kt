@@ -33,7 +33,12 @@ fun HomeMainView(
     onSubCategoryChange: (String) -> Unit,
     onNavigate: (Article) -> Unit,
 ) {
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState(
+        initialPage = 0,
+        initialPageOffsetFraction = 0f
+    ) {
+        Int.MAX_VALUE
+    }
     Column(modifier = Modifier.fillMaxSize()) {
         Spacer(modifier = Modifier.height(Spacing.large))
         Surface(

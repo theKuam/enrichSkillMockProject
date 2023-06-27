@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.layoutId
 import coil.compose.AsyncImage
 import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.theme.HomeCategoryBackground
@@ -29,7 +30,8 @@ fun ArticleBackground(article: Article) {
                     drawContent()
                     drawRect(gradient, blendMode = BlendMode.SrcOver)
                 }
-            },
+            }
+            .layoutId("background"),
         model = article.image,
         contentDescription = article.title,
         contentScale = ContentScale.Crop,

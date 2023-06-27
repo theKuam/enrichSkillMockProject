@@ -6,6 +6,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -26,6 +27,7 @@ import java.util.Base64
 
 private const val ARTICLE_PARCEL_KEY = "article"
 
+@ExperimentalMotionApi
 @ExperimentalFoundationApi
 @Composable
 fun NewsAppNavHost(
@@ -108,9 +110,11 @@ fun firstLaunchScreen(
             sharedPreferenceViewModel.setFirstLaunch()
             ScreenDestination.WELCOME_SCREEN.name
         }
+
         false -> {
             ScreenDestination.HOME_SCREEN.name
         }
+
         else -> {
             ScreenDestination.LOADING_SCREEN.name
         }

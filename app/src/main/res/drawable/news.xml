@@ -1,12 +1,31 @@
-<vector android:autoMirrored="true" android:height="108dp"
-    android:viewportHeight="48" android:viewportWidth="48"
-    android:width="108dp" xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#6c19ff" android:pathData="M9,11h36v27c0,2.209 -1.791,4 -4,4H9V11z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M41,42H7c-2.209,0 -4,-1.791 -4,-4V6h34v32C37,40.209 38.791,42 41,42z"/>
-    <path android:fillColor="#00b3d7" android:pathData="M3,38V11h34v27c0,2.209 1.791,4 4,4H7C4.791,42 3,40.209 3,38z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M7,15h26v7h-26z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M7,26h11v4h-11z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M7,34h11v4h-11z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M22,26h11v4h-11z"/>
-    <path android:fillColor="#3dd9eb" android:pathData="M22,34h11v4h-11z"/>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:autoMirrored="true"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#6c19ff"
+        android:pathData="M9,11h36v27c0,2.209 -1.791,4 -4,4H9V11z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M41,42H7c-2.209,0 -4,-1.791 -4,-4V6h34v32C37,40.209 38.791,42 41,42z" />
+    <path
+        android:fillColor="#00b3d7"
+        android:pathData="M3,38V11h34v27c0,2.209 1.791,4 4,4H7C4.791,42 3,40.209 3,38z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M7,15h26v7h-26z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M7,26h11v4h-11z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M7,34h11v4h-11z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M22,26h11v4h-11z" />
+    <path
+        android:fillColor="#3dd9eb"
+        android:pathData="M22,34h11v4h-11z" />
 </vector>

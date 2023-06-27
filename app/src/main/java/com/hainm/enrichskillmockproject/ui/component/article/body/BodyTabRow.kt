@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.R
@@ -23,11 +24,15 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
 fun BodyTabRow(
+    bodyHeaderBg: Color,
     currentIndex: Int,
     onTabSelected: (Int) -> Unit,
 ) {
     ScrollableTabRow(
-        modifier = Modifier.padding(horizontal = Spacing.large),
+        modifier = Modifier
+            .background(color = bodyHeaderBg)
+            .padding(horizontal = Spacing.large)
+            .layoutId("tabRow"),
         edgePadding = 0.dp,
         selectedTabIndex = currentIndex,
         containerColor = Color.Transparent,

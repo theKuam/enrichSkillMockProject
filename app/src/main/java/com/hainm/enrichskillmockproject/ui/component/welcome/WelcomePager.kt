@@ -29,7 +29,6 @@ fun WelcomePager(
 ) {
     HorizontalPager(
         state = pagerState,
-        pageCount = CAROUSEL_PAGE_COUNT,
     ) { index ->
         onPageChanged(pagerState.currentPage.toFloat() / CAROUSEL_PAGE_COUNT)
         val (title, description) = stringArrayResource(id = R.array.welcome_titles)[index] to stringArrayResource(

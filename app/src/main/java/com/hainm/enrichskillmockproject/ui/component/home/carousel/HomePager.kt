@@ -51,7 +51,6 @@ fun HomePager(
 ) {
     HorizontalPager(
         state = pagerState,
-        pageCount = Int.MAX_VALUE,
     ) { pseudoIndex ->
         var key by remember { mutableStateOf(false) }
         LaunchedEffect(key1 = isCarouselAutoPlayed.value, key2 = key) {
