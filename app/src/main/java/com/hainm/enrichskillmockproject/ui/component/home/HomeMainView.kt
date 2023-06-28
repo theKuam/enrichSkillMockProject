@@ -16,10 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.hainm.enrichskillmockproject.common.Outcome
-import com.hainm.enrichskillmockproject.data.model.Article
-import com.hainm.enrichskillmockproject.data.model.Articles
+import com.hainm.enrichskillmockproject.domain.model.Article
 import com.hainm.enrichskillmockproject.ui.component.home.article.HomeArticlePager
 import com.hainm.enrichskillmockproject.ui.component.home.carousel.HomeCarousel
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
@@ -28,10 +28,10 @@ fun HomeMainView(
     isCarouselAutoPlayed: State<Boolean>,
     onPlayButtonClicked: () -> Unit,
     onPauseButtonClicked: () -> Unit,
-    articles: State<Outcome<Articles>>,
+    articles: State<Outcome<List<Article>>>,
     onCategoryChange: (String) -> Unit,
     onSubCategoryChange: (String) -> Unit,
-    onNavigate: (Article) -> Unit,
+    onNavigate: (ArticleModel) -> Unit,
 ) {
     val pagerState = rememberPagerState(
         initialPage = 0,
@@ -41,6 +41,7 @@ fun HomeMainView(
     }
     Column(modifier = Modifier.fillMaxSize()) {
         Spacer(modifier = Modifier.height(Spacing.large))
+
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,7 +55,9 @@ fun HomeMainView(
                 onPauseButtonClicked,
             )
         }
+
         Spacer(modifier = Modifier.height(Spacing.large))
+
         HomeArticlePager(
             pagerState,
             onPauseButtonClicked,

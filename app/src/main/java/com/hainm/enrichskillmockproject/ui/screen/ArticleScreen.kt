@@ -11,16 +11,16 @@ import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
 import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.core.BaseScreen
-import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.article.ArticleBackground
 import com.hainm.enrichskillmockproject.ui.component.article.ArticleButtons
 import com.hainm.enrichskillmockproject.ui.component.article.ArticleContent
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 
 @ExperimentalMotionApi
 @ExperimentalFoundationApi
 @Composable
 fun ArticleScreen(
-    article: Article,
+    article: ArticleModel,
     onBackPressed: () -> Unit,
 ) {
     val progress = 0f
@@ -41,13 +41,16 @@ fun ArticleScreen(
             val bodyPagerBg = customColor("bodyPager", "backgroundColor")
             val bodyHeaderBg = customColor("header", "backgroundColor")
             val textColor = customColor("bodyPager", "textColor")
+
             ArticleBackground(article)
+
             ArticleContent(
                 article,
                 bodyHeaderBg,
                 bodyPagerBg,
                 textColor,
             )
+
             ArticleButtons(onBackPressed)
         }
     }

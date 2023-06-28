@@ -30,10 +30,12 @@ fun WelcomePager(
     HorizontalPager(
         state = pagerState,
     ) { index ->
-        onPageChanged(pagerState.currentPage.toFloat() / CAROUSEL_PAGE_COUNT)
         val (title, description) = stringArrayResource(id = R.array.welcome_titles)[index] to stringArrayResource(
             id = R.array.welcome_descriptions
         )[index]
+
+        onPageChanged(pagerState.currentPage.toFloat() / CAROUSEL_PAGE_COUNT)
+
         Column(
             modifier = modifier
                 .fillMaxHeight()
@@ -45,7 +47,9 @@ fun WelcomePager(
                 text = title,
                 style = AppTextStyle.WelcomeTitle,
             )
+
             Spacer(modifier = Modifier.height(Spacing.smallMedium))
+
             Text(
                 text = description,
                 style = AppTextStyle.WelcomeDescription,

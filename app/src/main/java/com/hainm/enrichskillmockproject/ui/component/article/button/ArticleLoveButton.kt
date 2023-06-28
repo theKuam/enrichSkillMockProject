@@ -25,6 +25,7 @@ fun ArticleLoveButton() {
     var isLoved by remember { mutableStateOf(false) }
     val color = if (isLoved) Fuchsia else Color.White
     val image = if (isLoved) R.drawable.heart_off_24 else R.drawable.heart_on_24
+
     Image(
         modifier = Modifier
             .size(24.dp)

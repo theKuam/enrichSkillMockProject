@@ -53,6 +53,18 @@ fun HomePager(
         state = pagerState,
     ) { pseudoIndex ->
         var key by remember { mutableStateOf(false) }
+        val categoryList = stringArrayResource(id = R.array.article_categories)
+        val pageCount = categoryList.size
+        val index = pseudoIndex % pageCount
+        val title = categoryList[index]
+        val image = when (index) {
+            0 -> painterResource(id = R.drawable.article_category_1)
+            1 -> painterResource(id = R.drawable.article_category_2)
+            2 -> painterResource(id = R.drawable.article_category_3)
+            3 -> painterResource(id = R.drawable.article_category_4)
+            else -> painterResource(id = R.drawable.article_category_1)
+        }
+
         LaunchedEffect(key1 = isCarouselAutoPlayed.value, key2 = key) {
             delay(CAROUSEL_AUTOPLAY_INTERVAL)
             if (isCarouselAutoPlayed.value) {
@@ -68,17 +80,6 @@ fun HomePager(
                     key = !key
                 }
             }
-        }
-        val categoryList = stringArrayResource(id = R.array.article_categories)
-        val pageCount = categoryList.size
-        val index = pseudoIndex % pageCount
-        val title = categoryList[index]
-        val image = when (index) {
-            0 -> painterResource(id = R.drawable.article_category_1)
-            1 -> painterResource(id = R.drawable.article_category_2)
-            2 -> painterResource(id = R.drawable.article_category_3)
-            3 -> painterResource(id = R.drawable.article_category_4)
-            else -> painterResource(id = R.drawable.article_category_1)
         }
         Box {
             Image(
@@ -120,6 +121,7 @@ fun HomePager(
                             .width(Spacing.small)
                             .background(color = HomeCarouselTitleCursorYellow),
                     )
+
                     Text(
                         modifier = Modifier
                             .padding(start = Spacing.extraSmall)

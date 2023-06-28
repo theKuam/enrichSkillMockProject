@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
@@ -23,7 +23,7 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 fun BodyPager(
     pagerState: PagerState,
     currentIndex: Int,
-    article: Article,
+    article: ArticleModel,
     bodyPagerBg: Color,
     textColor: Color,
 ) {

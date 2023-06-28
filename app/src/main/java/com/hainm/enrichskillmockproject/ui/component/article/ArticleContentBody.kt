@@ -9,15 +9,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import com.hainm.enrichskillmockproject.common.util.CONTENT_PAGE_COUNT
-import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.article.body.BodyDraggableBar
 import com.hainm.enrichskillmockproject.ui.component.article.body.BodyPager
 import com.hainm.enrichskillmockproject.ui.component.article.body.BodyTabRow
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 
 @ExperimentalFoundationApi
 @Composable
 fun ArticleContentBody(
-    article: Article,
+    article: ArticleModel,
     bodyHeaderBg: Color,
     bodyPagerBg: Color,
     textColor: Color,

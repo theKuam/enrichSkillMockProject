@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SharedPreferenceViewModel @Inject constructor(
+class NewsAppViewModel @Inject constructor(
     private val setFirstLaunchUseCase: SetFirstLaunchUseCase,
     private val getFirstLaunchUseCase: GetFirstLaunchUseCase,
 ) : ViewModel() {

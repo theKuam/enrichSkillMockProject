@@ -24,6 +24,7 @@ fun ArticleButtons(onBackPressed: () -> Unit) {
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         ArticleBackButton(onBackPressed)
+
         ArticleLoveButton()
     }
 }

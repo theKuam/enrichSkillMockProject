@@ -29,10 +29,10 @@ import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
 import com.hainm.enrichskillmockproject.common.util.Category
 import com.hainm.enrichskillmockproject.common.util.SubCategory
 import com.hainm.enrichskillmockproject.core.BaseScreen
-import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.home.HomeNavigateBottomView
 import com.hainm.enrichskillmockproject.ui.component.home.HomeUserView
 import com.hainm.enrichskillmockproject.ui.component.home.HomeViewPager
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundLower
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundMiddle
 import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundUpper
@@ -41,7 +41,7 @@ import com.hainm.enrichskillmockproject.ui.viewmodel.HomeViewModel
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(onNavigate: (Article) -> Unit) {
+fun HomeScreen(onNavigate: (ArticleModel) -> Unit) {
     val homeViewModel: HomeViewModel = hiltViewModel()
     val articles = homeViewModel.articlesStateFlow.collectAsState()
     val isCarouselAutoPlayed = homeViewModel.isCarouselAutoPlayed.collectAsState()
@@ -55,14 +55,17 @@ fun HomeScreen(onNavigate: (Article) -> Unit) {
     ) {
         CAROUSEL_PAGE_COUNT
     }
+
     LaunchedEffect(key1 = category, key2 = subCategory) {
         homeViewModel.getRecommendedArticles(category, subCategory)
     }
+
     BaseScreen {
         val density = LocalDensity.current
         val configuration = LocalConfiguration.current
         with(density) {
             val contentRatio = 1f - 60.dp.toPx() / configuration.screenHeightDp.dp.roundToPx()
+
             Box(
                 modifier = Modifier
                     .background(
@@ -85,8 +88,11 @@ fun HomeScreen(onNavigate: (Article) -> Unit) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Spacer(modifier = Modifier.height(Spacing.extraSmall))
+
                     HomeUserView()
+
                     Spacer(modifier = Modifier.height(Spacing.extraSmall))
+
                     HomeViewPager(
                         pagerState,
                         isCarouselAutoPlayed,
@@ -100,6 +106,7 @@ fun HomeScreen(onNavigate: (Article) -> Unit) {
                         onNavigate,
                     )
                 }
+
                 Box(modifier = Modifier.align(Alignment.BottomCenter)) {
                     HomeNavigateBottomView(pagerState.currentPage) {
                         tabIndex = it

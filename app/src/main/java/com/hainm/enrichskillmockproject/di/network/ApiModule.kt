@@ -1,7 +1,7 @@
 package com.hainm.enrichskillmockproject.di.network
 
 import com.hainm.enrichskillmockproject.BuildConfig
-import com.hainm.enrichskillmockproject.service.ArticleService
+import com.hainm.enrichskillmockproject.data.datasource.remote.service.ArticleService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module

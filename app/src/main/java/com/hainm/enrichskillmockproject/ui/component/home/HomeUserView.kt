@@ -15,6 +15,7 @@ fun HomeUserView() {
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         UserGreeting()
+
         UserAvatar()
     }
 }

@@ -11,11 +11,11 @@ import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.layoutId
 import coil.compose.AsyncImage
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.HomeCategoryBackground
 
 @Composable
-fun ArticleBackground(article: Article) {
+fun ArticleBackground(article: ArticleModel) {
     AsyncImage(
         modifier = Modifier
             .fillMaxSize()

@@ -16,7 +16,7 @@ import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -38,7 +38,7 @@ fun HomeNavigateBottomView(
     currentIndex: Int,
     onTabSelected: (Int) -> Unit,
 ) {
-    var tabIndex by remember { mutableStateOf(currentIndex) }
+    var tabIndex by remember { mutableIntStateOf(currentIndex) }
     LaunchedEffect(key1 = currentIndex) {
         tabIndex = currentIndex
     }

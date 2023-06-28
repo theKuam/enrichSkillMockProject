@@ -12,16 +12,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.unit.dp
-import com.hainm.enrichskillmockproject.data.model.Article
 import com.hainm.enrichskillmockproject.ui.component.article.header.HeaderPublishedDate
 import com.hainm.enrichskillmockproject.ui.component.article.header.HeaderSource
 import com.hainm.enrichskillmockproject.ui.component.article.header.HeaderTitle
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 import com.hainm.enrichskillmockproject.ui.theme.WhiteGreyText
 
 @Composable
 fun ArticleContentHeader(
-    article: Article,
+    article: ArticleModel,
     bodyHeaderBg: Color,
     textColor: Color,
 ) {

@@ -14,6 +14,7 @@ fun BaseScreen(
     content: @Composable () -> Unit,
 ) {
     HideSystemUI()
+
     Surface(modifier = Modifier.fillMaxSize()) {
         content()
     }

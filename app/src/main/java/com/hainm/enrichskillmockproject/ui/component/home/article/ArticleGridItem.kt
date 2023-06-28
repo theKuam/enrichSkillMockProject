@@ -25,16 +25,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.nullOrEmpty
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.ArticleItemBackground
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
 fun ArticleGridItem(
-    article: Article,
-    onNavigate: (Article) -> Unit,
+    article: ArticleModel,
+    onNavigate: (ArticleModel) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -55,13 +54,15 @@ fun ArticleGridItem(
             contentDescription = article.description,
             contentScale = ContentScale.Crop,
         )
+
         Text(
             modifier = Modifier.padding(horizontal = Spacing.smallMedium),
-            text = article.title.nullOrEmpty(),
+            text = article.title,
             style = AppTextStyle.NunitoCommonText,
             maxLines = 2,
             overflow = TextOverflow.Ellipsis,
         )
+
         Row(
             modifier = Modifier
                 .padding(Spacing.smallMedium)
@@ -75,6 +76,7 @@ fun ArticleGridItem(
                 painter = painterResource(id = R.drawable.menu_24),
                 contentDescription = "hamburger",
             )
+
             Text(
                 text = stringResource(id = R.string.read),
                 style = AppTextStyle.NunitoSubtitleText,

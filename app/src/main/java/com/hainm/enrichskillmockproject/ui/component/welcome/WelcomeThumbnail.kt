@@ -2,7 +2,6 @@ package com.hainm.enrichskillmockproject.ui.component.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
@@ -16,8 +15,8 @@ import com.hainm.enrichskillmockproject.R
 import com.hainm.enrichskillmockproject.ui.component.common.animateAlignmentAsState
 
 @Composable
-fun WelcomeThumbnail(ratio: State<Float>) {
-    val alignment by animateAlignmentAsState(ratio.value)
+fun WelcomeThumbnail(ratio: Float) {
+    val alignment by animateAlignmentAsState(ratio)
     Image(
         painter = painterResource(id = R.drawable.welcome_thumbnail),
         contentDescription = "Welcome thumbnail",

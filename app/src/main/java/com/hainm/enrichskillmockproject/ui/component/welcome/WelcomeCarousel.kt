@@ -19,11 +19,13 @@ fun WelcomeCarousel(
     ) {
         CAROUSEL_PAGE_COUNT
     }
+
     WelcomePager(
         modifier,
         pagerState,
         onPageChanged,
     )
+
     WelcomeBottomPart(
         modifier,
         pagerState,

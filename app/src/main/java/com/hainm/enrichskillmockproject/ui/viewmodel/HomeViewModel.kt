@@ -3,7 +3,7 @@ package com.hainm.enrichskillmockproject.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hainm.enrichskillmockproject.common.Outcome
-import com.hainm.enrichskillmockproject.data.model.Articles
+import com.hainm.enrichskillmockproject.domain.model.Article
 import com.hainm.enrichskillmockproject.domain.usecase.GetRecommendedArticlesUseCase
 import com.hainm.enrichskillmockproject.domain.usecase.Parameters
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,8 +20,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getRecommendedArticlesUseCase: GetRecommendedArticlesUseCase,
 ) : ViewModel() {
-    private val _articlesStateFlow = MutableStateFlow<Outcome<Articles>>(Outcome.NotLoading)
-    val articlesStateFlow: StateFlow<Outcome<Articles>>
+    private val _articlesStateFlow = MutableStateFlow<Outcome<List<Article>>>(Outcome.NotLoading)
+    val articlesStateFlow: StateFlow<Outcome<List<Article>>>
         get() = _articlesStateFlow.asStateFlow()
 
     private val _isCarouselAutoPlayed = MutableStateFlow(false)

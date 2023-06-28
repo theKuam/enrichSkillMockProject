@@ -3,12 +3,12 @@ package com.hainm.enrichskillmockproject.ui.component.article
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 
 @ExperimentalFoundationApi
 @Composable
 fun ArticleContent(
-    article: Article,
+    article: ArticleModel,
     bodyHeaderBg: Color,
     bodyPagerBg: Color,
     textColor: Color,
@@ -18,6 +18,7 @@ fun ArticleContent(
         bodyHeaderBg,
         textColor,
     )
+
     ArticleContentBody(
         article,
         bodyHeaderBg,

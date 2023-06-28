@@ -8,19 +8,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
-import com.hainm.enrichskillmockproject.common.util.nullOrEmpty
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 
 @Composable
 fun HeaderTitle(
-    article: Article,
+    article: ArticleModel,
     textColor: Color,
 ) {
     var textSize by remember { mutableStateOf(AppTextStyle.ArticleTitle.fontSize) }
 
     Text(
-        text = article.title.nullOrEmpty(),
+        text = article.title,
         style = AppTextStyle.ArticleTitle,
         color = textColor,
         fontSize = textSize,

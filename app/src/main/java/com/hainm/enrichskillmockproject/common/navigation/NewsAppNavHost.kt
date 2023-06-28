@@ -5,27 +5,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
-import com.hainm.enrichskillmockproject.common.util.EMPTY_STRING
-import com.hainm.enrichskillmockproject.common.viewmodel.SharedPreferenceViewModel
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.common.viewmodel.NewsAppViewModel
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.screen.ArticleScreen
 import com.hainm.enrichskillmockproject.ui.screen.HomeScreen
 import com.hainm.enrichskillmockproject.ui.screen.LoadingScreen
 import com.hainm.enrichskillmockproject.ui.screen.WelcomeScreen
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import java.util.Base64
-
-private const val ARTICLE_PARCEL_KEY = "article"
 
 @ExperimentalMotionApi
 @ExperimentalFoundationApi
@@ -34,27 +30,26 @@ fun NewsAppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
 ) {
-    val sharedPreferenceViewModel: SharedPreferenceViewModel = hiltViewModel()
-    val isFirstLaunch = sharedPreferenceViewModel.isFirstLaunch.collectAsState()
-    val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .build()
+    val newsAppViewModel: NewsAppViewModel = hiltViewModel()
+    val isFirstLaunch = newsAppViewModel.isFirstLaunch.collectAsState()
+    var articleModel by remember { mutableStateOf(ArticleModel()) }
 
     LaunchedEffect(key1 = Unit) {
-        sharedPreferenceViewModel.getFirstLaunch()
+        newsAppViewModel.getFirstLaunch()
     }
 
     NavHost(
         modifier = modifier,
         navController = navController,
         startDestination = firstLaunchScreen(
-            sharedPreferenceViewModel,
+            newsAppViewModel,
             isFirstLaunch,
         ),
     ) {
         composable(route = ScreenDestination.LOADING_SCREEN.name) {
             LoadingScreen()
         }
+
         composable(route = ScreenDestination.WELCOME_SCREEN.name) {
             WelcomeScreen {
                 navController.navigate(ScreenDestination.HOME_SCREEN.name) {
@@ -64,50 +59,31 @@ fun NewsAppNavHost(
                 }
             }
         }
+
         composable(route = ScreenDestination.HOME_SCREEN.name) {
             HomeScreen { article ->
-                val jsonAdapter = moshi.adapter(Article::class.java)
-                val articleJsonString = jsonAdapter.toJson(article)
-                navController.navigate(
-                    "${ScreenDestination.ARTICLE_SCREEN.name}/{article}"
-                        .replace(
-                            oldValue = "{article}",
-                            newValue = Base64.getUrlEncoder()
-                                .encodeToString(articleJsonString.toByteArray()),
-                        )
-                )
+                articleModel = article
+                navController.navigate(ScreenDestination.ARTICLE_SCREEN.name)
             }
         }
+
         composable(
-            route = "${ScreenDestination.ARTICLE_SCREEN.name}/{article}",
-            arguments = listOf(
-                navArgument(ARTICLE_PARCEL_KEY) {
-                    type = NavType.StringType
-                    defaultValue = EMPTY_STRING
-                }
-            )
-        ) { backStackEntry ->
-            val articleJsonString = backStackEntry.arguments?.getString(ARTICLE_PARCEL_KEY)
-            articleJsonString?.let { json ->
-                val jsonAdapter = moshi.adapter(Article::class.java)
-                val article = jsonAdapter.fromJson(String(Base64.getUrlDecoder().decode(json)))
-                article?.let {
-                    ArticleScreen(it) {
-                        navController.popBackStack()
-                    }
-                }
+            route = ScreenDestination.ARTICLE_SCREEN.name
+        ) {
+            ArticleScreen(articleModel) {
+                navController.popBackStack()
             }
         }
     }
 }
 
 fun firstLaunchScreen(
-    sharedPreferenceViewModel: SharedPreferenceViewModel,
+    newsAppViewModel: NewsAppViewModel,
     isFirstLaunch: State<Boolean?>,
 ): String {
     return when (isFirstLaunch.value) {
         true -> {
-            sharedPreferenceViewModel.setFirstLaunch()
+            newsAppViewModel.setFirstLaunch()
             ScreenDestination.WELCOME_SCREEN.name
         }
 

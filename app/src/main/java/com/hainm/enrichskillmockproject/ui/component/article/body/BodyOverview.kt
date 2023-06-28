@@ -16,14 +16,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.hainm.enrichskillmockproject.common.util.nullOrEmpty
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
 fun BodyOverview(
-    article: Article,
+    article: ArticleModel,
     textColor: Color,
 ) {
     LazyColumn(
@@ -36,7 +35,7 @@ fun BodyOverview(
     ) {
         item {
             Text(
-                text = article.content.nullOrEmpty().replace("\n", "\n\n"),
+                text = article.content,
                 style = AppTextStyle.ContentText,
                 color = textColor,
                 textAlign = TextAlign.Justify,

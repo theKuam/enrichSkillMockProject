@@ -48,6 +48,7 @@ fun LoadingScreen() {
                     ),
                     contentDescription = "app icon"
                 )
+
                 LoadingView()
             }
         }
