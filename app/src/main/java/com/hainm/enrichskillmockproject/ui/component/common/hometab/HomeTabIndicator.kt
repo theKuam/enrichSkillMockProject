@@ -24,14 +24,17 @@ fun Modifier.homeTabIndicator(
         value = tabPosition
     }
 ) {
+    // Update tab width animation
     val currentTabWidth by animateDpAsState(
         targetValue = tabPosition.width,
         animationSpec = animationSpec,
     )
+    // Update tab indicator position
     val indicatorOffset by animateDpAsState(
         targetValue = tabPosition.left,
         animationSpec = animationSpec,
     )
+
     fillMaxWidth()
         .wrapContentSize(Alignment.BottomStart)
         .offset(x = indicatorOffset)

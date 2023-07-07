@@ -1,0 +1,123 @@
+{
+  ConstraintSets: {
+    start: {
+      background: {
+        top: [
+          'parent',
+          'top'
+        ]
+      },
+      buttons: {
+        top: [
+          'parent',
+          'top'
+        ]
+      },
+      header: {
+        bottom: [
+          'tabRow',
+          'top'
+        ],
+        custom: {
+          backgroundColor: "#00FFFFFF"
+        }
+      },
+      tabRow: {
+        bottom: [
+          'bodyPager',
+          'top'
+        ]
+      },
+      draggableBar: {
+        start: [
+          'parent',
+          'start'
+        ],
+        end: [
+          'parent',
+          'end'
+        ],
+        top: [
+          'bodyPager',
+          'top'
+        ]
+      },
+      bodyPager: {
+        height: '30%',
+        bottom: [
+          'parent',
+          'bottom'
+        ],
+        custom: {
+          backgroundColor: "#13140D",
+          "textColor": "#FFFFFF"
+        }
+      }
+    },
+    end: {
+      background: {
+        top: [
+          'parent',
+          'top'
+        ]
+      },
+      buttons: {
+        top: [
+          'parent',
+          'top'
+        ]
+      },
+      header: {
+        bottom: [
+          'tabRow',
+          'top'
+        ],
+        custom: {
+          backgroundColor: "#FFFFFFFF"
+        }
+      },
+      tabRow: {
+        top: [
+          'bodyPager',
+          'top'
+        ]
+      },
+      draggableBar: {
+        start: [
+          'parent',
+          'start'
+        ],
+        end: [
+          'parent',
+          'end'
+        ],
+        top: [
+          'bodyPager',
+          'top'
+        ]
+      },
+      bodyPager: {
+        height: '40%',
+        bottom: [
+          'parent',
+          'bottom'
+        ],
+        custom: {
+          backgroundColor: "#FFFFFF",
+          "textColor": "#13140D"
+        }
+      }
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      onSwipe: {
+        anchor: 'draggableBar',
+        direction: 'up',
+        side: 'top'
+      }
+    }
+  }
+}

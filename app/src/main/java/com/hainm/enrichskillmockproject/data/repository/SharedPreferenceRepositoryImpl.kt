@@ -4,10 +4,8 @@ import android.content.SharedPreferences
 import com.hainm.enrichskillmockproject.domain.repository.SharedPreferenceRepository
 import javax.inject.Inject
 
-class SharedPreferenceRepositoryImpl @Inject constructor(
-    private val sharedPreferences: SharedPreferences,
-) : SharedPreferenceRepository {
-
+class SharedPreferenceRepositoryImpl @Inject constructor(private val sharedPreferences: SharedPreferences) :
+    SharedPreferenceRepository {
     companion object {
         private const val IS_FIRST_LAUNCH = "IS_FIRST_LAUNCH"
     }

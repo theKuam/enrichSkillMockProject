@@ -5,17 +5,17 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.layoutId
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
-import com.hainm.enrichskillmockproject.common.util.CONTENT_PAGE_COUNT
-import com.hainm.enrichskillmockproject.data.model.Article
-import com.hainm.enrichskillmockproject.ui.theme.AppBackgroundUpper
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
@@ -23,29 +23,30 @@ import com.hainm.enrichskillmockproject.ui.theme.Spacing
 fun BodyPager(
     pagerState: PagerState,
     currentIndex: Int,
-    article: Article,
+    article: ArticleModel,
+    bodyPagerBg: Color,
+    textColor: Color,
 ) {
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth()
             .background(
-                color = AppBackgroundUpper,
+                color = bodyPagerBg,
                 shape = RoundedCornerShape(
                     topStart = Spacing.large,
                     topEnd = Spacing.large,
                 )
             )
+            .layoutId("bodyPager"),
     ) {
         HorizontalPager(
             state = pagerState,
-            userScrollEnabled = false,
-            pageCount = CONTENT_PAGE_COUNT
+            userScrollEnabled = false
         ) { index ->
             LaunchedEffect(key1 = currentIndex) {
                 with(pagerState) {
-                    val target = currentIndex
                     animateScrollToPage(
-                        page = target,
+                        page = currentIndex,
                         animationSpec = tween(
                             durationMillis = CAROUSEL_AUTOPLAY_ANIMATING_DURATION,
                             easing = FastOutSlowInEasing,
@@ -55,7 +56,10 @@ fun BodyPager(
             }
             when (index) {
                 0 -> {
-                    BodyOverview(article)
+                    BodyOverview(
+                        article,
+                        textColor,
+                    )
                 }
 
                 1 -> {

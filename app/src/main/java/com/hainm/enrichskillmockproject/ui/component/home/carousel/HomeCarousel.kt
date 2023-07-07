@@ -25,11 +25,13 @@ fun HomeCarousel(
             isCarouselAutoPlayed,
             pagerState,
         )
+
         HomeAutoPlayButton(
             isCarouselAutoPlayed,
             onPlayButtonClicked,
             onPauseButtonClicked,
         )
+
         Row(
             modifier = Modifier
                 .align(Alignment.BottomCenter),

@@ -18,18 +18,19 @@ class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
         return Outline.Generic(
             path = drawIndicatorPath(
                 size = size,
-                cornerRadius = with(density) { cornerRadius.toPx() })
+                cornerRadius = with(density) { cornerRadius.toPx() }),
         )
     }
 
     private fun drawIndicatorPath(size: Size, cornerRadius: Float): Path {
+        // Reset tab indicator if the height is larger than the width.
         if (size.width < size.height) return Path().apply {
             reset()
             lineTo(0f, size.height)
         }
         return Path().apply {
             reset()
-            // top left arc
+            // Top left arc
             arcTo(
                 rect = Rect(
                     left = 0f,
@@ -42,7 +43,7 @@ class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
                 forceMoveTo = false,
             )
             lineTo(x = 2 * cornerRadius, y = size.height - cornerRadius)
-            // bottom left arc
+            // Bottom left arc
             arcTo(
                 rect = Rect(
                     left = 2 * cornerRadius,
@@ -55,7 +56,7 @@ class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
                 forceMoveTo = false,
             )
             lineTo(x = size.width - 3 * cornerRadius, y = size.height - cornerRadius)
-            // bottom right arc
+            // Bottom right arc
             arcTo(
                 rect = Rect(
                     left = size.width - 4 * cornerRadius,
@@ -68,7 +69,7 @@ class HomeTabIndicatorShape(private val cornerRadius: Dp) : Shape {
                 forceMoveTo = false,
             )
             lineTo(x = size.width - 2 * cornerRadius, y = cornerRadius)
-            // top right arc
+            // Top right arc
             arcTo(
                 rect = Rect(
                     left = size.width - 2 * cornerRadius,

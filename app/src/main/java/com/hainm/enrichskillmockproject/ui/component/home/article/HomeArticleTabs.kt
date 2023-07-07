@@ -12,6 +12,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -38,10 +40,11 @@ fun HomeArticleTabs(
     val categoryList = stringArrayResource(id = R.array.article_categories)
     val pageCount = categoryList.size
     val currentIndex = pagerState.currentPage % pageCount
-    var viewWidth by remember { mutableStateOf(0f) }
-    var viewHeight by remember { mutableStateOf(0f) }
-    var selectedIndex by remember { mutableStateOf(currentIndex) }
+    var viewWidth by remember { mutableFloatStateOf(0f) }
+    var viewHeight by remember { mutableFloatStateOf(0f) }
+    var selectedIndex by remember { mutableIntStateOf(currentIndex) }
     var isTabSelected by remember { mutableStateOf(false) }
+
     LaunchedEffect(key1 = isTabSelected) {
         with(pagerState) {
             val target = selectedIndex
@@ -54,7 +57,9 @@ fun HomeArticleTabs(
             )
         }
     }
+
     OnTabChange(currentIndex, onCategoryChange, onSubCategoryChange)
+
     Box(
         modifier = Modifier
             .fillMaxWidth()

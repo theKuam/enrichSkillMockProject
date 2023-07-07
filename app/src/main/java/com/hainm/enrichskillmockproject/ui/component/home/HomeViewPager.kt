@@ -10,9 +10,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
 import com.hainm.enrichskillmockproject.common.Outcome
 import com.hainm.enrichskillmockproject.common.util.CAROUSEL_AUTOPLAY_ANIMATING_DURATION
-import com.hainm.enrichskillmockproject.common.util.CAROUSEL_PAGE_COUNT
-import com.hainm.enrichskillmockproject.data.model.Article
-import com.hainm.enrichskillmockproject.data.model.Articles
+import com.hainm.enrichskillmockproject.domain.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 
 @ExperimentalFoundationApi
 @Composable
@@ -21,16 +20,15 @@ fun HomeViewPager(
     isCarouselAutoPlayed: State<Boolean>,
     onPlayButtonClicked: () -> Unit,
     onPauseButtonClicked: () -> Unit,
-    articles: State<Outcome<Articles>>,
+    articles: State<Outcome<List<Article>>>,
     onCategoryChange: (String) -> Unit,
     onSubCategoryChange: (String) -> Unit,
     tabIndex: Int,
     isTabSelected: Boolean,
-    onNavigate: (Article) -> Unit,
+    onNavigate: (ArticleModel) -> Unit,
 ) {
     HorizontalPager(
         state = pagerState,
-        pageCount = CAROUSEL_PAGE_COUNT,
     ) { index ->
         LaunchedEffect(key1 = isTabSelected) {
             with(pagerState) {

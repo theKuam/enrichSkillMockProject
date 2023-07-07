@@ -26,16 +26,15 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.hainm.enrichskillmockproject.R
-import com.hainm.enrichskillmockproject.common.util.nullOrEmpty
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.AppTextStyle
 import com.hainm.enrichskillmockproject.ui.theme.ArticleItemBackground
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @Composable
 fun ArticleColumnItem(
-    article: Article,
-    onNavigate: (Article) -> Unit,
+    article: ArticleModel,
+    onNavigate: (ArticleModel) -> Unit,
 ) {
     Row(
         modifier = Modifier
@@ -56,6 +55,7 @@ fun ArticleColumnItem(
             contentDescription = article.description,
             contentScale = ContentScale.Crop,
         )
+
         Column(
             modifier = Modifier
                 .fillMaxHeight()
@@ -64,11 +64,12 @@ fun ArticleColumnItem(
             verticalArrangement = Arrangement.SpaceBetween,
         ) {
             Text(
-                text = article.title.nullOrEmpty(),
+                text = article.title,
                 style = AppTextStyle.NunitoMediumText,
                 maxLines = 4,
                 overflow = TextOverflow.Ellipsis,
             )
+
             Row(
                 modifier = Modifier.clickable { onNavigate(article) },
                 horizontalArrangement = Arrangement.spacedBy(2.dp),
@@ -80,6 +81,7 @@ fun ArticleColumnItem(
                     painter = painterResource(id = R.drawable.menu_24),
                     contentDescription = "hamburger",
                 )
+
                 Text(
                     text = stringResource(id = R.string.read),
                     style = AppTextStyle.NunitoSubtitleText,

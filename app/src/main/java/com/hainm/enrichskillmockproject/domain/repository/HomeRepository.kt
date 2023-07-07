@@ -1,9 +1,7 @@
 package com.hainm.enrichskillmockproject.domain.repository
 
-import com.hainm.enrichskillmockproject.common.Outcome
-import com.hainm.enrichskillmockproject.data.model.Articles
-import kotlinx.coroutines.flow.Flow
+import com.hainm.enrichskillmockproject.domain.model.Article
 
 interface HomeRepository {
-    fun getRecommendedArticles(category: String, subCategory: String): Flow<Outcome<Articles>>
+    suspend fun getRecommendedArticles(category: String, subCategory: String): List<Article>
 }

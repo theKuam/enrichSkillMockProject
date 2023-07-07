@@ -23,6 +23,7 @@ fun RowScope.UserGreeting() {
             text = stringResource(id = R.string.home_welcome_user_1),
             style = AppTextStyle.HomeWelcomeUserBold,
         )
+
         Text(
             text = stringResource(id = R.string.home_welcome_user_2),
             style = AppTextStyle.HomeWelcomeUserNormal,

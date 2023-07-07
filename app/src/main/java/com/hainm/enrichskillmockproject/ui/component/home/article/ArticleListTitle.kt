@@ -22,6 +22,7 @@ fun ArticleListTitle(onShowAllClick: () -> Unit) {
             text = stringResource(id = R.string.recommended_article),
             style = AppTextStyle.RecommendedArticle,
         )
+
         Text(
             modifier = Modifier.clickable { onShowAllClick() },
             text = stringResource(id = R.string.show_all),

@@ -56,7 +56,9 @@ fun HomeBlankView(tabIndex: Int) {
                     R.drawable.user_24
                 }
             }
+
             Spacer(modifier = Modifier.width(Spacing.small))
+
             Image(
                 modifier = Modifier.height(Spacing.extraLarge),
                 painter = painterResource(id = image),

@@ -1,18 +1,15 @@
-package com.hainm.enrichskillmockproject.data.model
+package com.hainm.enrichskillmockproject.data.entity
 
-import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import kotlinx.parcelize.Parcelize
 
-@Parcelize
 @JsonClass(generateAdapter = true)
-data class Article(
+data class ArticleEntity(
     @Json(name = "title") val title: String?,
     @Json(name = "description") val description: String?,
     @Json(name = "content") val content: String?,
     @Json(name = "url") val url: String?,
     @Json(name = "image") val image: String?,
     @Json(name = "publishedAt") val publishAt: String?,
-    @Json(name = "source") val source: Source?,
-) : Parcelable
+    @Json(name = "source") val source: SourceEntity?,
+)

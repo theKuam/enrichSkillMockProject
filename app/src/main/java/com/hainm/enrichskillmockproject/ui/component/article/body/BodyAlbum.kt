@@ -10,12 +10,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.hainm.enrichskillmockproject.data.model.Article
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 
 @Composable
-fun BodyAlbum(article: Article) {
+fun BodyAlbum(article: ArticleModel) {
     LazyColumn(
         modifier = Modifier
             .padding(

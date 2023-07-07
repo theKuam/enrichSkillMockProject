@@ -37,6 +37,7 @@ fun WelcomeBottomPart(
                 Spacing.small,
                 Arrangement.Start,
             )
+
             WelcomeButton(
                 pagerState,
                 onNavigate,

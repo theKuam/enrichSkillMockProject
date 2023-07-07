@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -17,29 +18,30 @@ import com.hainm.enrichskillmockproject.common.failed
 import com.hainm.enrichskillmockproject.common.loading
 import com.hainm.enrichskillmockproject.common.succeeded
 import com.hainm.enrichskillmockproject.common.util.nullOrZero
-import com.hainm.enrichskillmockproject.data.model.Article
-import com.hainm.enrichskillmockproject.data.model.Articles
+import com.hainm.enrichskillmockproject.domain.model.Article
+import com.hainm.enrichskillmockproject.ui.adapter.ArticleAdapter.toArticleModelList
 import com.hainm.enrichskillmockproject.ui.component.common.LoadingView
+import com.hainm.enrichskillmockproject.ui.model.ArticleModel
 import com.hainm.enrichskillmockproject.ui.theme.Spacing
 
 @ExperimentalFoundationApi
 @Composable
 fun HomeArticleList(
-    articles: State<Outcome<Articles>>,
-    onNavigate: (Article) -> Unit,
+    articles: State<Outcome<List<Article>>>,
+    onNavigate: (ArticleModel) -> Unit,
 ) {
-    val firstHalfList = arrayListOf<Article>()
-    val secondHalfList = arrayListOf<Article>()
-    var articleListSize by remember { mutableStateOf(0) }
+    val firstHalfList = arrayListOf<ArticleModel>()
+    val secondHalfList = arrayListOf<ArticleModel>()
+    var articleListSize by remember { mutableIntStateOf(0) }
     var onClickShowAllGrid by remember { mutableStateOf(false) }
     var onClickShowAllColumn by remember { mutableStateOf(false) }
     with(articles.value) {
         when {
             succeeded -> {
                 val result = data
-                articleListSize = result?.articles?.size.nullOrZero()
+                articleListSize = result?.size.nullOrZero()
                 if (articleListSize != 0) {
-                    result?.articles?.let {
+                    result.toArticleModelList().let {
                         val halfSize = articleListSize / 2
                         firstHalfList.addAll(
                             if (articleListSize == 1) it else it.subList(
