@@ -39,18 +39,18 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                add("implementation", project(":core:model"))
-                add("implementation", project(":core:ui"))
-                add("implementation", project(":core:designsystem"))
-                add("implementation", project(":core:data"))
-                add("implementation", project(":core:common"))
-                add("implementation", project(":core:domain"))
-                add("implementation", project(":core:analytics"))
+//                add("implementation", project(":core:model"))
+//                add("implementation", project(":core:ui"))
+//                add("implementation", project(":core:designsystem"))
+//                add("implementation", project(":core:data"))
+//                add("implementation", project(":core:common"))
+//                add("implementation", project(":core:domain"))
+//                add("implementation", project(":core:analytics"))
 
                 add("testImplementation", kotlin("test"))
-                add("testImplementation", project(":core:testing"))
+//                add("testImplementation", project(":core:testing"))
                 add("androidTestImplementation", kotlin("test"))
-                add("androidTestImplementation", project(":core:testing"))
+//                add("androidTestImplementation", project(":core:testing"))
 
                 add("implementation", libs.findLibrary("coil.kt").get())
                 add("implementation", libs.findLibrary("coil.kt.compose").get())
