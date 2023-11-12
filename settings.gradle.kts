@@ -1,4 +1,7 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -13,4 +16,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "EnrichSkillMockProject"
-include ':app'
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include(":app")
