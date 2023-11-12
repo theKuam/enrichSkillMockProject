@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.hainm.enrichskillmockproject
+package com.hainm.apps.enrichskillmockproject
 
 /**
  * This is shared between :app and :benchmarks module to provide configurations type safety.

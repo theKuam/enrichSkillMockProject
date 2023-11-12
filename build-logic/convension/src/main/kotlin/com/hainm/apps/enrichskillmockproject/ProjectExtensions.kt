@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.hainm.enrichskillmockproject
+package com.hainm.apps.enrichskillmockproject
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog

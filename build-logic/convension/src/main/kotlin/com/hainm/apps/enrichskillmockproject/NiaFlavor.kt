@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject
+package com.hainm.apps.enrichskillmockproject
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor

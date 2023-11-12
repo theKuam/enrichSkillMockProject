@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.hainm.enrichskillmockproject
+package com.hainm.apps.enrichskillmockproject
 
 import com.android.build.api.artifact.SingleArtifact
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension

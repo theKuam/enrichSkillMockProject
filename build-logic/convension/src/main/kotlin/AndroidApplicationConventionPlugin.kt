@@ -15,7 +15,7 @@
  */
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.hainm.apps.enrichskillmockproject.libs.configureGradleManagedDevices
+import com.hainm.apps.enrichskillmockproject.configureGradleManagedDevices
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.android.build.gradle.BaseExtension
 import com.hainm.apps.enrichskillmockproject.configureBadgingTasks

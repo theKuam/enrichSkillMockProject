@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hainm.enrichskillmockproject
+package com.hainm.apps.enrichskillmockproject
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project
