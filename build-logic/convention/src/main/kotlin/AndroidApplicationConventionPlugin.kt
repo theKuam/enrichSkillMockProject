@@ -32,7 +32,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
-                apply("nowinandroid.android.lint")
+                apply("enrichskillmockproject.android.lint")
             }
 
             extensions.configure<ApplicationExtension> {

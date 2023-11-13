@@ -1,11 +1,13 @@
 import java.util.Properties
+import com.hainm.enrichskillmockproject.NewsBuildType
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-parcelize")
+    alias(libs.plugins.enrichskillmockproject.android.application)
+    alias(libs.plugins.enrichskillmockproject.android.application.compose)
+    alias(libs.plugins.enrichskillmockproject.android.application.flavors)
+    alias(libs.plugins.enrichskillmockproject.android.application.jacoco)
+    alias(libs.plugins.enrichskillmockproject.android.hilt)
+    id("jacoco")
 }
 
 // Load Api key
@@ -15,7 +17,6 @@ val apiKeyProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.hainm.enrichskillmockproject"
     compileSdk = 34
 
     defaultConfig {
@@ -34,33 +35,27 @@ android {
     }
 
     buildTypes {
-        debug {}
+        debug {
+            applicationIdSuffix = NewsBuildType.DEBUG.applicationIdSuffix
+        }
 
         val release by getting {
             isMinifyEnabled = true
+            applicationIdSuffix = NewsBuildType.RELEASE.applicationIdSuffix
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("debug")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
     buildFeatures {
-        compose = true
         buildConfig = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
-    }
+
     packaging {
         resources {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
+    namespace = "com.hainm.enrichskillmockproject"
 }
 
 dependencies {

@@ -27,13 +27,13 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("nowinandroid.android.library")
-                apply("nowinandroid.android.hilt")
+                apply("enrichskillmockproject.android.library")
+                apply("enrichskillmockproject.android.hilt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     testInstrumentationRunner =
-                        "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+                        "com.hainm.enrichskillmockproject.core.testing.NewsTestRunner"
                 }
                 configureGradleManagedDevices(this)
             }
