@@ -20,7 +20,7 @@ buildscript {
         mavenCentral()
 
         // Android Build Server
-        // maven { url = uri("../enrichskillmockproject-prebuilts/m2repository") }
+        maven { url = uri("../enrichskillmockproject-prebuilts/m2repository") }
     }
 
     dependencies {

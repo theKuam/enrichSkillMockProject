@@ -33,7 +33,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     testInstrumentationRunner =
-                        "com.hainm.enrichskillmockproject.apps.enrichskillmockproject.core.testing.NiaTestRunner"
+                        "com.hainm.apps.enrichskillmockproject.core.testing.NiaTestRunner"
                 }
                 configureGradleManagedDevices(this)
             }

@@ -117,5 +117,5 @@ dependencies {
     testImplementation(libs.accompanist.testharness)
     testImplementation(libs.work.testing)
     // testImplementation(kotlin("test"))
-    kaptTest(libs.hilt.compiler)
+    // kaptTest(libs.hilt.compiler)
 }
