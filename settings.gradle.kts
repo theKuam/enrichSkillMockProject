@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         google()
@@ -12,5 +14,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "EnrichSkillMockProject"
-include ':app'
+rootProject.name = "enrichskillmockproject"
+include(":app")
