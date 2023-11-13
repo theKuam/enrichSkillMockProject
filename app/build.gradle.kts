@@ -1,4 +1,4 @@
-import com.hainm.apps.enrichskillmockproject.BiaBuildType
+import com.hainm.apps.enrichskillmockproject.NiaBuildType
 
 plugins {
     alias(libs.plugins.enrichskillmockproject.android.application)
@@ -13,23 +13,23 @@ plugins {
 
 // Load Api key
 val apiKeyPropertiesFile = rootProject.file("apikey.properties")
-val apiKeyProperties = Properties()
-apiKeyProperties.load(FileInputStream(apiKeyPropertiesFile))
+val apiKeyProperties = java.util.Properties()
+apiKeyProperties.load(java.io.FileInputStream(apiKeyPropertiesFile))
 
 android {
     defaultConfig {
         applicationId = "com.hainm.apps.enrichskillmockproject"
         minSdk = 27
         targetSdk = 34
-        versionCode 1
-        versionName "1.0.0" // X.Y.Z; X = Major, Y = minor, Z = Patch level
+        versionCode = 1
+        versionName = "1.0.0" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
-        testInstrumentationRunner "com.hainm.apps.enrichskillmockproject.core.testing.NiaTestRunner"
+        testInstrumentationRunner = "com.hainm.apps.enrichskillmockproject.core.testing.NiaTestRunner"
         vectorDrawables {
-            useSupportLibrary true
+            useSupportLibrary = true
         }
 
-        buildConfigField("String", "API_KEY", apiKeyProperties['API_KEY'])
+        buildConfigField("String", "API_KEY", apiKeyProperties["API_KEY"])
     }
 
     buildTypes {
@@ -89,7 +89,7 @@ dependencies {
     androidTestImplementation(projects.core.network)
     androidTestImplementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.accompanist.testharness)
-    androidTestImplementation(kotlin("test"))
+    //androidTestImplementation(kotlin("test"))
     debugImplementation(libs.androidx.compose.ui.testManifest)
     debugImplementation(projects.uiTestHiltManifest)
 
@@ -116,6 +116,6 @@ dependencies {
     testImplementation(libs.androidx.navigation.testing)
     testImplementation(libs.accompanist.testharness)
     testImplementation(libs.work.testing)
-    testImplementation(kotlin("test"))
+    // testImplementation(kotlin("test"))
     kaptTest(libs.hilt.compiler)
 }

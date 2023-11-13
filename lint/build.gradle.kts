@@ -40,5 +40,5 @@ dependencies {
     compileOnly(libs.lint.api)
     testImplementation(libs.lint.checks)
     testImplementation(libs.lint.tests)
-    testImplementation(kotlin("test"))
+    // testImplementation(kotlin("test"))
 }

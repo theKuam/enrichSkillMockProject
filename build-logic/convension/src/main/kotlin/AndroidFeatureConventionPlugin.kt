@@ -47,9 +47,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 //                add("implementation", project(":core:domain"))
 //                add("implementation", project(":core:analytics"))
 
-                add("testImplementation", kotlin("test"))
+                // add("testImplementation", kotlin("test"))
 //                add("testImplementation", project(":core:testing"))
-                add("androidTestImplementation", kotlin("test"))
+                // add("androidTestImplementation", kotlin("test"))
 //                add("androidTestImplementation", project(":core:testing"))
 
                 add("implementation", libs.findLibrary("coil.kt").get())
