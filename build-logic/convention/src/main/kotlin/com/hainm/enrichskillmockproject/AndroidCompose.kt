@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("UnstableApiUsage")
-
 package com.hainm.enrichskillmockproject
 
 import com.android.build.api.dsl.CommonExtension
