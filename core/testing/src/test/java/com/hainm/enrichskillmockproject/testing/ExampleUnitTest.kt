@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.model
+package com.hainm.enrichskillmockproject.testing
 
 import org.junit.Test
 

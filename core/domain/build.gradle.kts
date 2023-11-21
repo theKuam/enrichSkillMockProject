@@ -17,5 +17,5 @@ dependencies {
 
     ksp(libs.hilt.compiler)
 
-    //testImplementation(projects.core.testing)
+    testImplementation(projects.core.testing)
 }
