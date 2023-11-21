@@ -1,5 +1,3 @@
-@file:Suppress("UnstableApiUsage")
-
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -16,4 +14,12 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "enrichskillmockproject"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:common")
+include(":core:data")
+include(":core:domain")
+include(":core:model")
+include(":core:network")
+include(":core:testing")
