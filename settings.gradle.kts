@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":common")
+
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -17,3 +20,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "enrichskillmockproject"
 include(":app")
+include(":core:common")
