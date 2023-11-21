@@ -1,7 +1,6 @@
 package com.hainm.enrichskillmockproject.core.network
 
-import com.hainm.enrichskillmockproject.core.Dispatcher
-import com.hainm.enrichskillmockproject.core.NewsDispatchers.Default
+import com.hainm.enrichskillmockproject.core.network.NewsDispatchers.Default
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

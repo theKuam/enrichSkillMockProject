@@ -1,4 +1,4 @@
-package com.hainm.enrichskillmockproject.core
+package com.hainm.enrichskillmockproject.core.network
 
 import javax.inject.Qualifier
 
